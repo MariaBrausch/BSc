@@ -1,0 +1,6 @@
+from enum import Enum
+class PromptType(Enum):
+    BEISPIELANTWORTEN = "BEISPIELANTWORTEN"
+    STRATEGIEA = "STRATEGIEA"
+    STRATEGIEB = "STRATEGIEB" 
+    STRATEGIEC = "STRATEGIEC"  

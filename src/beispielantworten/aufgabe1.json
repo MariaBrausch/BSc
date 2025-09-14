@@ -1,0 +1,26 @@
+{
+    "aufgabe_id": "aufgabe1",
+    "timestamp": "2025-09-11T17:42:26.215162",
+    "aufgabe": "Welche Schwachstellen hat Amdahls Gesetz?",
+    "musterloesung": "Das Gesetz berücksichtigt nicht, dass weitere beschleunigende Elemente wie Caches existieren...",
+    "bewertungskriterien": [
+        "Inhaltliche Korrektheit",
+        "Vollständigkeit",
+        "Struktur",
+        "Nachvollziehbarkeit"
+    ],
+    "beispiele": [
+        {
+            "kategorie": "korrekt",
+            "antwort": "Amdahls Gesetz geht davon aus, dass die Problemgröße fest bleibt..."
+        },
+        {
+            "kategorie": "teilweise inkorrekt",
+            "antwort": "Amdahls Gesetz ist nur dann richtig, wenn man sehr viele Kerne hat..."
+        },
+        {
+            "kategorie": "inkorrekt",
+            "antwort": "Amdahls Gesetz ist veraltet, weil heute alle Computer Multicore haben..."
+        }
+    ]
+}

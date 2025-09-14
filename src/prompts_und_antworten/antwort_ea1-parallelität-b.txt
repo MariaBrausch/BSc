@@ -1,0 +1,29 @@
+### Bewertungskategorie: Korrekt
+
+**Antwort 1:**
+
+Amdahls Gesetz beschreibt, dass die maximale Beschleunigung eines Programms durch Parallelisierung von dem seriellen Anteil des Programms beschränkt wird. Selbst wenn man unendlich viele Prozessoren hätte, könnte der parallele Speedup nicht die Dauer des notwendigen seriellen Anteils überschreiten. In der Realität kommen zusätzliche Kosten durch Kommunikations- und Synchronisationsaufwand hinzu, wodurch ab einer bestimmten Anzahl von Prozessoren die Effizienz sinkt.
+
+**Antwort 2:**
+
+Das Gesetz von Amdahl besagt, dass der Teil eines Programms, der nicht parallelisiert werden kann, die maximale potenzielle Beschleunigung begrenzt. Sobald die Anzahl der Prozessoren sehr hoch ist, wird der serielle Anteil zum limitierenden Faktor. Zudem führen die Kosten für Kommunikation und Synchronisation bei vielen Prozessoren dazu, dass weitere Steigerungen ineffizient werden.
+
+### Bewertungskategorie: Teilweise Inkorrekt
+
+**Antwort 1:**
+
+Amdahls Gesetz zeigt, dass eine unbegrenzte Anzahl an Prozessoren zu einer unendlichen Beschleunigung führen kann, solange der serielle Anteil klein genug ist. Damit kann das gesamte Programm nahezu sofort ausgeführt werden, da die parallelen Aufgaben dominieren.
+
+**Antwort 2:**
+
+Amdahls Gesetz erklärt, dass die Geschwindigkeit eines Programms proportional zur Anzahl der Prozessoren ist, die genutzt werden. Solange der serielle Anteil kleiner wird, ist die Performance massiv steigerbar, aber Synchronisationskosten spielen dabei laut Amdahl keine Rolle.
+
+### Bewertungskategorie: Inkorrekt
+
+**Antwort 1:**
+
+Amdahls Gesetz besagt, dass mit mehr Prozessoren der serielle Anteil schrumpft und somit vollkommen eliminiert werden kann. Des Weiteren können alle Programmteile parallelisiert werden, was maximalen Speedup erlaubt.
+
+**Antwort 2:**
+
+Nach Amdahls Gesetz wird die Effizienz eines Programms nur durch die Anzahl der verfügbaren Prozessoren bestimmt. Je mehr Prozessoren vorhanden sind, desto schneller läuft das Programm, ohne Berücksichtigung des seriellen Anteils oder anderen Aufwand.

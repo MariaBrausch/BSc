@@ -1,0 +1,36 @@
+{
+    "aufgabe_id": "EA1 Gefangenendilemma a)",
+    "timestamp": "2025-09-12T13:48:44.119865",
+    "aufgabe_titel": "Gefangenendilemma a)",
+    "aufgabe": "Füllen Sie nachfolgende Entscheidungstabelle aus!",
+    "musterloesung": "R (A still, B still): (3, 3) — Gesamt = 6\nS (A still, B hört): (0, 8) — Gesamt = 8\nT (A hört, B still): (8, 0) — Gesamt = 8\nP (A hört, B hört): (1, 1) — Gesamt = 2\n",
+    "bewertungskriterien": [
+        "Korrektheit der Zuordnung"
+    ],
+    "beispiele": [
+        {
+            "kategorie": "korrekt",
+            "antwort": "R: (3,3) = 6; S: (0,8) = 8; T: (8,0) = 8; P: (1,1) = 2"
+        },
+        {
+            "kategorie": "korrekt",
+            "antwort": "R: (3,3) Gesamt 6; S: (0,8) Gesamt 8; T: (8,0) Gesamt 8; P: (1,1) Gesamt 2"
+        },
+        {
+            "kategorie": "teilweise inkorrekt",
+            "antwort": "R: (3,3) = 6; S: (0,8) = 8; T: (8,0) = 7; P: (1,1) = 2"
+        },
+        {
+            "kategorie": "teilweise inkorrekt",
+            "antwort": "R: (3,3) = 6; S: (8,0) = 8; T: (0,8) = 8; P: (1,1) = 2"
+        },
+        {
+            "kategorie": "inkorrekt",
+            "antwort": "R: (1,1) = 2; S: (3,3) = 6; T: (0,8) = 10; P: (8,0) = 8"
+        },
+        {
+            "kategorie": "inkorrekt",
+            "antwort": "R: (0,0) = 0; S: (5,5) = 10; T: (5,5) = 10; P: (3,3) = 6"
+        }
+    ]
+}
