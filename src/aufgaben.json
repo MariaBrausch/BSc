@@ -1,9 +1,0 @@
-[
-  {
-    "id": "ea1-parallelität-b",
-    "prompt_type": "BEISPIELANTWORTEN",
-    "task_type": "FREITEXT",
-    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie die Aussage(n) von Amdahls Gesetz in eigenen Worten zusammen!",
-    "musterloesung": "Amdahls Gesetz besagt, dass der serielle Anteil eines Programms die durch Parallelisierung maximal erreichbare Beschleunigung begrenzt. Zwar steigt der Speedup mit dem Anteil parallelisierbarer Programmteile, jedoch wird selbst bei unendlich hoher Anzahl verfügbarer Prozessoren mindestens die Zeit benötigt, die der serielle Anteil erfordert. Da in der Praxis Parallelisierungskosten (durch Kommunikations- und Synchronisationsaufwand) entstehen, steigt ab einer gewissen Anzahl von Prozessoren der Zeitbedarf zur Bearbeitung der Aufgabe sogar wieder."
-  }
-]
