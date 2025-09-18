@@ -23,81 +23,80 @@ out_dir_B.mkdir(exist_ok=True)
 out_dir_C = Path("strategie_C")
 out_dir_C.mkdir(exist_ok=True)
 
-    #Beispielantworten erstellen
-    # for eintrag in data:
-    #     prompt_type = PromptType[eintrag["prompt_type"]]
-    #     task_type = TaskType[eintrag["task_type"]]
-    #     aufgabe = eintrag["aufgabenstellung"]
-    #     musterlsg = eintrag["musterloesung"]
-
-
-    #     prompt_text = PromptBuilder.build_prompt(prompt_type, task_type, aufgabe, musterlsg)
-
-    #     prompt_path = out_dir / f"prompt_{eintrag['id']}.txt"
-    #     prompt_path.write_text(prompt_text, encoding="utf-8")
-
-    
-    #     antwort_text = call_model_responses(prompt_text)
-
-       
-    #     answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
-    #     answer_path.write_text(antwort_text, encoding="utf-8")
-
-    #     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
-
-    #Beispiel für STRATEGIEA
-      
-    # for eintrag in data: 
-    #     prompt_type = PromptType.STRATEGIEA
-    #     task_type = TaskType[eintrag["task_type"]]
-    #     aufgabe = eintrag["aufgabenstellung"]
-    #     studentischeantwort = choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
-    #     prompt_text = prompt_builder_strategieA(prompt_type, task_type, aufgabe, studentischeantwort)
-
-    #     prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}.txt"
-    #     prompt_path.write_text(prompt_text, encoding="utf-8")
-
-    #     antwort_text = call_model_responses(prompt_text)
-
-    #     answer_path = out_dir_A/ f"antwort_strategieA_{eintrag['id']}.txt"
-    #     answer_path.write_text(antwort_text, encoding="utf-8")
-
-#Beispiel für STRATEGIEB
+#Beispielantworten erstellen
 for eintrag in data:
-    prompt_type = PromptType.STRATEGIEB
+    prompt_type = PromptType.BEISPIELANTWORTEN
     task_type = TaskType[eintrag["task_type"]]
     aufgabe = eintrag["aufgabenstellung"]
     musterlsg = eintrag["musterloesung"]
-    teilweiseInkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
-    inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
-    fewShotBeispiele = "Musterlösung: " + musterlsg + "\n\nTeilweise inkorrekte Antwort: " + teilweiseInkorrekt + "\n\nInkorrekte Antwort: " + inkorrekt    
-    studentischeantwort = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
-    prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,musterlsg,fewShotBeispiele,studentischeantwort)
 
-    prompt_path = out_dir_B / f"prompt_strategieB_{eintrag['id']}.txt"
+
+    prompt_text = promptBuilder.build_prompt(prompt_type, task_type, aufgabe, musterlsg, None, None)
+
+    prompt_path = out_dir / f"prompt_{eintrag['id']}.txt"
     prompt_path.write_text(prompt_text, encoding="utf-8")
 
-    #antwort_text = promptBuilder.call_model_responses(prompt_text)
+    
+    antwort_text = promptBuilder.call_model_responses(prompt_text)
 
-    #answer_path = out_dir_B/ f"antwort_strategieB_{eintrag['id']}.txt"
-    #answer_path.write_text(antwort_text, encoding="utf-8")
+       
+    answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
+    answer_path.write_text(antwort_text, encoding="utf-8")
 
-# Beispiel für STRATEGIEC
+    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
+
+# #Beispiel für STRATEGIEA      
+# for eintrag in data: 
+#     prompt_type = PromptType.STRATEGIEA
+#     task_type = TaskType[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     studentischeantwort = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
+#     prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort)
+
+#     prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}.txt"
+#     prompt_path.write_text(prompt_text, encoding="utf-8")
+
+#     antwort_text = promptBuilder.call_model_responses(prompt_text)
+
+#     answer_path = out_dir_A/ f"antwort_strategieA_{eintrag['id']}.txt"
+#     answer_path.write_text(antwort_text, encoding="utf-8")
+
+# #Beispiel für STRATEGIEB
+# for eintrag in data:
+#     prompt_type = PromptType.STRATEGIEB
+#     task_type = TaskType[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     musterlsg = eintrag["musterloesung"]
+#     teilweiseInkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
+#     inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
+#     fewShotBeispiele = "Musterlösung: " + musterlsg + "\n\nTeilweise inkorrekte Antwort: " + teilweiseInkorrekt + "\n\nInkorrekte Antwort: " + inkorrekt    
+#     studentischeantwort = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
+#     prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,musterlsg,fewShotBeispiele,studentischeantwort)
+
+#     prompt_path = out_dir_B / f"prompt_strategieB_{eintrag['id']}.txt"
+#     prompt_path.write_text(prompt_text, encoding="utf-8")
+
+#     antwort_text = promptBuilder.call_model_responses(prompt_text)
+
+#     answer_path = out_dir_B/ f"antwort_strategieB_{eintrag['id']}.txt"
+#     answer_path.write_text(antwort_text, encoding="utf-8")
+
+# #Beispiel für STRATEGIEC
 # for eintrag in data:    
 #     prompt_type = PromptType.STRATEGIEC
 #     task_type = TaskType[eintrag["task_type"]]
 #     aufgabe = eintrag["aufgabenstellung"]
 #     musterlsg = eintrag["musterloesung"]
-#     teilweiseInkorrekt = choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
-#     inkorrekt = choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
+#     teilweiseInkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
+#     inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
 #     fewShotBeispiele = "Musterlösung: " + musterlsg + "\n\nTeilweise inkorrekte Antwort: " + teilweiseInkorrekt + "\n\nInkorrekte Antwort: " + inkorrekt    
-#     studentischeantwort = choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
-#     prompt_text = prompt_builder_strategieC(prompt_type, task_type, aufgabe, fewShotBeispiele, studentischeantwort)
+#     studentischeantwort = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
+#     prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,musterlsg,fewShotBeispiele,studentischeantwort)
 
 #     prompt_path = out_dir_C / f"prompt_strategieC_{eintrag['id']}.txt"
 #     prompt_path.write_text(prompt_text, encoding="utf-8")
 
-#     antwort_text = call_model_responses(prompt_text)
+#     antwort_text = promptBuilder.call_model_responses(prompt_text)
 
 #     answer_path = out_dir_C/ f"antwort_strategieC_{eintrag['id']}.txt"
 #     answer_path.write_text(antwort_text, encoding="utf-8")

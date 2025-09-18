@@ -1,8 +1,7 @@
 # Ignoriere alle .txt-Dateien
 *.txt
 
-# Ignoriere alle .json-Dateien
-*.json
+
 
 # Ignoriere den __pycache__ Ordner
 __pycache__/

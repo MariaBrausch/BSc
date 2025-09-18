@@ -1,29 +1,20 @@
-### Bewertungskategorie: Korrekt
+### bewertungskategorie: korrekt 
+**antwort 1**  
+Amdahls Gesetz erklärt, dass der serielle Teil eines Programms den maximal erreichbaren Speedup durch Parallelisierung begrenzt. Selbst wenn man theoretisch unendlich viele Prozessoren hat, wird die Bearbeitungszeit durch den seriellen Anteil bestimmt. In der Praxis kommen noch Parallelisierungskosten wie Kommunikation und Synchronisation hinzu, was bei einer großen Anzahl von Prozessoren sogar zu einer Verlängerung der Bearbeitungszeit führen kann.
 
-**Antwort 1:**
+**antwort 2**  
+Nach Amdahls Gesetz limitiert der serielle Anteil eines Programms den maximalen Speedup, der durch Parallelisierung möglich ist. Unabhängig davon, wie viele Prozessoren zur Verfügung stehen, bestimmt der serielle Anteil die Mindestbearbeitungszeit. Zudem führen praktisch Kommunikations- und Synchronisationskosten dazu, dass ab einer bestimmten Anzahl von Prozessoren die Effizienz wieder abnimmt.
 
-Amdahls Gesetz beschreibt, dass die maximale Beschleunigung eines Programms durch Parallelisierung von dem seriellen Anteil des Programms beschränkt wird. Selbst wenn man unendlich viele Prozessoren hätte, könnte der parallele Speedup nicht die Dauer des notwendigen seriellen Anteils überschreiten. In der Realität kommen zusätzliche Kosten durch Kommunikations- und Synchronisationsaufwand hinzu, wodurch ab einer bestimmten Anzahl von Prozessoren die Effizienz sinkt.
+### bewertungskategorie: teilweise inkorrekt 
+**antwort 1**  
+Amdahls Gesetz besagt, dass die Programmgeschwindigkeit durch den parallelen Anteil des Programms überproportional gesteigert werden kann, jedoch bleibt der serielle Anteil immer ein Hindernis. Die Anzahl der eingesetzten Prozessoren ist irrelevant, da immer ein Teil der Zeit verloren geht.
 
-**Antwort 2:**
+**antwort 2**  
+Laut Amdahls Gesetz wird die Gesamtgeschwindigkeit eines Programms durch Parallelisierung verbessert, aber es ignoriert größtenteils die Bedeutung des seriellen Anteils. Man kann mehr Prozessoren hinzufügen, aber der Gewinn ist minimal, weil die serielle Zeit konstant bleibt.
 
-Das Gesetz von Amdahl besagt, dass der Teil eines Programms, der nicht parallelisiert werden kann, die maximale potenzielle Beschleunigung begrenzt. Sobald die Anzahl der Prozessoren sehr hoch ist, wird der serielle Anteil zum limitierenden Faktor. Zudem führen die Kosten für Kommunikation und Synchronisation bei vielen Prozessoren dazu, dass weitere Steigerungen ineffizient werden.
+### bewertungskategorie: inkorrekt 
+**antwort 1**  
+Amdahls Gesetz sagt aus, dass ein Programm durch die Anzahl der Prozessoren unbegrenzt beschleunigt werden kann, solange der parallele Teil groß genug ist. Der serielle Anteil ist dabei vernachlässigbar.
 
-### Bewertungskategorie: Teilweise Inkorrekt
-
-**Antwort 1:**
-
-Amdahls Gesetz zeigt, dass eine unbegrenzte Anzahl an Prozessoren zu einer unendlichen Beschleunigung führen kann, solange der serielle Anteil klein genug ist. Damit kann das gesamte Programm nahezu sofort ausgeführt werden, da die parallelen Aufgaben dominieren.
-
-**Antwort 2:**
-
-Amdahls Gesetz erklärt, dass die Geschwindigkeit eines Programms proportional zur Anzahl der Prozessoren ist, die genutzt werden. Solange der serielle Anteil kleiner wird, ist die Performance massiv steigerbar, aber Synchronisationskosten spielen dabei laut Amdahl keine Rolle.
-
-### Bewertungskategorie: Inkorrekt
-
-**Antwort 1:**
-
-Amdahls Gesetz besagt, dass mit mehr Prozessoren der serielle Anteil schrumpft und somit vollkommen eliminiert werden kann. Des Weiteren können alle Programmteile parallelisiert werden, was maximalen Speedup erlaubt.
-
-**Antwort 2:**
-
-Nach Amdahls Gesetz wird die Effizienz eines Programms nur durch die Anzahl der verfügbaren Prozessoren bestimmt. Je mehr Prozessoren vorhanden sind, desto schneller läuft das Programm, ohne Berücksichtigung des seriellen Anteils oder anderen Aufwand.
+**antwort 2**  
+Amdahls Gesetz behauptet, dass die Programmleistung linear mit der Anzahl der Prozessoren wächst, ohne dass der serielle Anteil irgendeine Rolle spielt. Wichtiger ist, dass man unendlich viele Prozesse parallel laufen lassen kann.

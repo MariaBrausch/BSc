@@ -6,6 +6,16 @@ class Instructions(Enum):
     Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.Je Bewertungskategorie zwei Antworten. 
     Orientiere dich dabei an der angegebenen Musterlösung (Ground Truth) und den definierten Bewertungskriterien. 
     Achte darauf, dass die Antworten realistisch wie von Studierenden formuliert wirken.
+    Ausgabeformat: 
+    ### bewertungskategorie: korrekt 
+    **antwort 1**
+    **antwort 2**
+    ### bewertungskategorie: teilweise inkorrekt 
+    **antwort 1**
+    **antwort 2**
+    ### bewertungskategorie: inkorrekt 
+    **antwort 1**   
+    **antwort 2**
     """
     STRATEGIEA = """Du bekommst eine Aufgabenstellung, Bewertungsrubrik und eine studentische Antwort. Bewerte die studentische Antwort auf Basis der Bewertungsrubrik.
     """

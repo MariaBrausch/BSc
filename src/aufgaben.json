@@ -1,0 +1,70 @@
+[
+  {
+    "id": "ea1-parallelität-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie die Aussage(n) von Amdahls Gesetz in eigenen Worten zusammen!",
+    "musterloesung": "Amdahls Gesetz besagt, dass der serielle Anteil eines Programms die durch Parallelisierung maximal erreichbare Beschleunigung begrenzt. Zwar steigt der Speedup mit dem Anteil parallelisierbarer Programmteile, jedoch wird selbst bei unendlich hoher Anzahl verfügbarer Prozessoren mindestens die Zeit benötigt, die der serielle Anteil erfordert. Da in der Praxis Parallelisierungskosten (durch Kommunikations- und Synchronisationsaufwand) entstehen, steigt ab einer gewissen Anzahl von Prozessoren der Zeitbedarf zur Bearbeitung der Aufgabe sogar wieder."
+  },
+
+  { 
+    "id": "ea1-parallelität-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Amdahls Gesetz?",
+    "musterloesung": "Das Gesetz berücksichtigt nicht, dass weitere beschleunigende Elemente wie bspw. Caches existieren, die den Speedup weiter erhöhen können. Weiterhin geht Amdahl von einer festenProblemgröße aus, d.h. er nimmt an, dass \"nur\" ein festes Problem innerhalb kürzester Zeit zulösen ist. Dass durch die Parallelisierung ggf. komplexere Probleme lösbar werden,berücksichtigt er nicht."
+  },
+  {
+    "id": "ea1-parallelität-e",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie nun die Aussage von Gustafsons Gesetz in eigenen Worten zusammen!",
+    "musterloesung": "Gustafson dreht im Vergleich zu Amdahl die Zeilsetzung um. Er stellt fest, dass mit wachsender Anzahl von Prozessoren immer größere Aufgaben bewältigt werden können, weil in einer fest vorgegebenen Zeitspanne der Parallelanteil im Verhältnis zum seriellen Anteil immer stärker dominiert. Analog zu Amdahl steigt auch hier der Speedup mit der Anzahl der Prozessoren und dem parallelisierbaren Anteil, ist aber nicht nach oben beschränkt."
+  },
+  {
+    "id": "ea1-parallelität-f",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Gustafsons Gesetz?",
+    "musterloesung": "Nicht jedes Problem lässt sich beliebig vergrößern. Stattdessen müssen häufig Probleme in fest vorgegebenen zeitlichen Grenzen (sog. Echtzeitbedingunen) gelöst werden. Hier kann Gustafsons Gesetz nicht angewendet werden."
+  },
+  {
+    "id": "ea2-strukturen",
+    "task_type": "BEISPIELE",
+    "aufgabenstellung": "Im Kurs haben Sie einige Beispiel für Strukturen in Natur und Technik kennengelernt. Nennen Sie fünf weitere Beispiel für Strukturen aus diesen Bereichen:",
+    "musterloesung": "Beispiele hierfür sind neben vielen anderen: Das Stromnetz, Drahtgebundenes Telekommunikationsnetz, Ausbreitung ansteckender Krankheiten, Sanddünen in der Wüste, Vogel- und Fischschwärme, Hierarchien in Organisationen oder anderen sozialen Gemeinschaften auch bei Tieren. Dies ist natürlich nur eine kleine Auswahl. In der Korrektur wurden auch weitere Beispiele von Strukturen als richtig gewertet."
+  },
+  {
+    "id": "ea3-Signalklassifikation",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Tragen Sie die fehlenden Begriffe im nachfolgenden Signalklassifikationsbaum ein:",
+    "musterloesung": "von links oben nach rechts unten: stochastisch, deterministisch, nichtstationär, stationär, quasiperiodisch, nichtperiodisch, periodisch"
+  },
+  {
+    "id": "ea3-Fourierreihe-1",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ Lösung: a0/2 und Rechenweg/Begründung", 
+    "musterloesung": "a0/2 = 0,5; Rechenweg/Begründung: $$\\frac{a_0}{2}$$ lautet: $$\\frac{a_0}{2} =  \\frac{1}{T_0} \\int_{t_0}^{t_0+T_0} x(t) \\, dt$$ Dies entspricht dem arithmetischen Mittel über eine Periode, also im Beispiel genau 0,5."
+  },
+  {
+    "id": "ea3-Fourierreihe-2",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ ak und Rechenweg/Begründung", 
+    "musterloesung":"$$a_k = \\frac{2 - 2\\cos(\\pi k)}{\\pi^2 k^2} = \\begin{cases} \\dfrac{2}{\\pi^2 k^2}, & k \\\\ \\text{ungerade} \\\\[6pt] 0, & \\text{sonst} \\end{cases}$$; Rechenweg / Begründung: Die Ausgangsformel lautet $$ a_k = \\frac{2}{T_0} \\int_{t_0}^{t_0+T_0} x(t)\\cos(k\\omega_0 t)\\, dt \\quad$$ mit $$\\quad \\omega_0 = \\frac{2\\pi}{T_0} $$ Im konkreten Fall $(T_0 = 2)$ gilt daher $$ a_k = \\int_{-1}^{1} x(t)\\cos(k \\pi t)\\, dt $$ Aus Symmetriegründen genügt es, nur über eine Dreiecksseite zu integrieren und das Ergebnis zu verdoppeln: $$ a_k = 2 \\int_{0}^{1} (1-t)\\cos(k\\pi t)\\, dt $$ Durch Lösung dieses Integrals über partielle Integration kommt man auf das obenstehende Ergebnis."
+  },
+  {
+    "id": "ea3-Fourierreihe-3",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ bk und Rechenweg/Begründung", 
+    "musterloesung":"bk = 0; Rechenweg/Begründung:  Die Dreiecksfunktion ist gerade und kann daher keine ungeraden Schwingungsanteile enthalten."
+  },
+  {
+    "id": "ea4-crc-a",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Geben Sie zunächst das Informationspolynom I(x) in TeX-Notation (ohne Dollarzeichen) an.",
+    "musterloesung": "I(x) = 0·x^15 + 0·x^14 + 1·x^13 + 1·x^12 + 0·x^11 + 0·x^10 + 0·x^9 + 1·x^8 + 1·x^7 + 0·x^6 + 0·x^5 + 0·x^4 + 1·x^3 + 1·x^2 + 0·x^1 + 0·x^0 = x^13 + x^12 + x^8 + x^7 + x^3 + x^2"
+  },
+  {
+    "id": "ea4-crc-d",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Wie lautet der resultierende CRC Prüfwert (binär)?",
+    "musterloesung": "001100011000110011011"
+  }
+
+]
