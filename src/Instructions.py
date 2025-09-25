@@ -3,9 +3,14 @@ from textwrap import dedent
 
 class Instructions(Enum):
     BEISPIELANTWORTEN = """
-    Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.Je Bewertungskategorie zwei Antworten. 
+    Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.
     Orientiere dich dabei an der angegebenen Musterlösung (Ground Truth) und den definierten Bewertungskriterien. 
+    Strikte Regeln:
+    Gib in jeder Kategorie genau zwei Antworten.
     Achte darauf, dass die Antworten realistisch wie von Studierenden formuliert wirken.
+
+
+
     Ausgabeformat: 
     ### bewertungskategorie: korrekt 
     **antwort 1**

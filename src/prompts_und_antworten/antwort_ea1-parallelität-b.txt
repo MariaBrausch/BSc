@@ -1,20 +1,28 @@
-### bewertungskategorie: korrekt 
-**antwort 1**  
-Amdahls Gesetz erklärt, dass der serielle Teil eines Programms den maximal erreichbaren Speedup durch Parallelisierung begrenzt. Selbst wenn man theoretisch unendlich viele Prozessoren hat, wird die Bearbeitungszeit durch den seriellen Anteil bestimmt. In der Praxis kommen noch Parallelisierungskosten wie Kommunikation und Synchronisation hinzu, was bei einer großen Anzahl von Prozessoren sogar zu einer Verlängerung der Bearbeitungszeit führen kann.
+[Antwort generiert am 19.09.2025 19:04:17]
 
-**antwort 2**  
-Nach Amdahls Gesetz limitiert der serielle Anteil eines Programms den maximalen Speedup, der durch Parallelisierung möglich ist. Unabhängig davon, wie viele Prozessoren zur Verfügung stehen, bestimmt der serielle Anteil die Mindestbearbeitungszeit. Zudem führen praktisch Kommunikations- und Synchronisationskosten dazu, dass ab einer bestimmten Anzahl von Prozessoren die Effizienz wieder abnimmt.
+### bewertungskategorie: korrekt 
+**antwort 1**
+
+Amdahls Gesetz erklärt, dass der maximale Geschwindigkeitszuwachs durch Parallelisierung eines Programms durch dessen seriellen Anteil limitiert wird. Selbst wenn unendlich viele Prozessoren verfügbar sind, wird die Ausführungszeit nie kürzer als die Zeit, die für den seriellen Anteil benötigt wird. Außerdem können höhere Parallelisierungsversuche zu zusätzlichen Kosten durch Kommunikation und Synchronisation führen.
+
+**antwort 2**
+
+Laut Amdahls Gesetz begrenzt der serielle Teil eines Programms die maximale Beschleunigung, die durch Parallelisierung erreicht werden kann. Der Speedup erhöht sich mit dem parallelisierbaren Anteil, aber selbst mit unbegrenzten Prozessoren beschränkt der serielle Anteil die Ausführungszeit. Dabei können auch steigende Kommunikations- und Synchronisationskosten den Nutzen der Parallelisierung schmälern.
 
 ### bewertungskategorie: teilweise inkorrekt 
-**antwort 1**  
-Amdahls Gesetz besagt, dass die Programmgeschwindigkeit durch den parallelen Anteil des Programms überproportional gesteigert werden kann, jedoch bleibt der serielle Anteil immer ein Hindernis. Die Anzahl der eingesetzten Prozessoren ist irrelevant, da immer ein Teil der Zeit verloren geht.
+**antwort 1**
 
-**antwort 2**  
-Laut Amdahls Gesetz wird die Gesamtgeschwindigkeit eines Programms durch Parallelisierung verbessert, aber es ignoriert größtenteils die Bedeutung des seriellen Anteils. Man kann mehr Prozessoren hinzufügen, aber der Gewinn ist minimal, weil die serielle Zeit konstant bleibt.
+Amdahls Gesetz besagt, dass Programme durch Parallelisierung erstaunliche Geschwindigkeitssteigerungen schaffen können, solange der serielle Anteil klein ist. Wenn aber viele Prozessoren genutzt werden, kann man fast gar nicht um den seriellen Anteil herumkommen. Allerdings werden ab einer bestimmten Anzahl an Prozessoren die Vorteile durch die Synchronisationskosten aufgehoben.
+
+**antwort 2**
+
+Nach Amdahls Gesetz ist der parallelisierbare Teil eines Programms entscheidend für den Gesamt-Speedup. Je größer dieser Anteil wird, desto mehr steigt die Leistung. Doch ab einer bestimmten Anzahlsgrenze von Prozessoren wird keine weitere Verbesserung erzielt, da die Synchronisationskosten die Geschwindigkeit begrenzen.
 
 ### bewertungskategorie: inkorrekt 
-**antwort 1**  
-Amdahls Gesetz sagt aus, dass ein Programm durch die Anzahl der Prozessoren unbegrenzt beschleunigt werden kann, solange der parallele Teil groß genug ist. Der serielle Anteil ist dabei vernachlässigbar.
+**antwort 1**   
 
-**antwort 2**  
-Amdahls Gesetz behauptet, dass die Programmleistung linear mit der Anzahl der Prozessoren wächst, ohne dass der serielle Anteil irgendeine Rolle spielt. Wichtiger ist, dass man unendlich viele Prozesse parallel laufen lassen kann.
+Amdahls Gesetz zeigt, dass man durch Hinzufügen von Prozessoren einen unbegrenzten Geschwindigkeitszuwachs erzielen kann. Solange ein Programm parallelisiert wird, gibt es kaum Begrenzungen für den Speedup, unabhängig vom seriellen Anteil.
+
+**antwort 2**
+
+Amdahls Gesetz beschreibt, dass der Speedup eines Programms direkt proportional zur Anzahl der eingesetzten Prozessoren ist, ohne durch den seriellen Anteil eingeschränkt zu werden. Sobald genug Prozessoren vorhanden sind, kann man die Aufgabe extrem schnell lösen.

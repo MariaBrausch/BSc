@@ -1,8 +1,12 @@
 Anweisung:
 
-    Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.Je Bewertungskategorie zwei Antworten. 
+    Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.
     Orientiere dich dabei an der angegebenen Musterlösung (Ground Truth) und den definierten Bewertungskriterien. 
-    Achte darauf, dass die Antworten realistisch wie von Studierenden formuliert wirken.
+    Wichtige Regeln:
+    Gib in jeder Kategorie genau zwei Beispielantworten.
+    Die Antworten sollen so wirken, als wären sie realistisch von Studierenden formuliert (auch mit typischen Rechenfehlern oder Vereinfachungen, je nach Kategorie).
+    Keine Erklärungen oder Kommentare darüber, warum eine Antwort falsch oder richtig ist.
+    Gib nur die Antworten im verlangten Format aus.
     Ausgabeformat: 
     ### bewertungskategorie: korrekt 
     **antwort 1**

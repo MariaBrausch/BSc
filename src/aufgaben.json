@@ -1,70 +1,74 @@
 [
   {
-    "id": "ea1-parallelität-b",
+    "id": "ea7-1-a",
     "task_type": "FREITEXT",
-    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie die Aussage(n) von Amdahls Gesetz in eigenen Worten zusammen!",
-    "musterloesung": "Amdahls Gesetz besagt, dass der serielle Anteil eines Programms die durch Parallelisierung maximal erreichbare Beschleunigung begrenzt. Zwar steigt der Speedup mit dem Anteil parallelisierbarer Programmteile, jedoch wird selbst bei unendlich hoher Anzahl verfügbarer Prozessoren mindestens die Zeit benötigt, die der serielle Anteil erfordert. Da in der Praxis Parallelisierungskosten (durch Kommunikations- und Synchronisationsaufwand) entstehen, steigt ab einer gewissen Anzahl von Prozessoren der Zeitbedarf zur Bearbeitung der Aufgabe sogar wieder."
+    "aufgabenstellung": "Nennen Sie Anforderungen im Bereich Smart City",
+    "musterloesung":"Verteilte Sensoren, teils innerhalb Gebäude, Straßen oder Laternen verbaut. Lebensdauer mehrere Jahre (teilweise ohne externe Stromversorgung). Jeder Sensor sendet periodisch kleine Datenmengen. "
   },
-
-  { 
-    "id": "ea1-parallelität-c",
+  {
+    "id": "ea7-1-b",
     "task_type": "FREITEXT",
-    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Amdahls Gesetz?",
-    "musterloesung": "Das Gesetz berücksichtigt nicht, dass weitere beschleunigende Elemente wie bspw. Caches existieren, die den Speedup weiter erhöhen können. Weiterhin geht Amdahl von einer festenProblemgröße aus, d.h. er nimmt an, dass \"nur\" ein festes Problem innerhalb kürzester Zeit zulösen ist. Dass durch die Parallelisierung ggf. komplexere Probleme lösbar werden,berücksichtigt er nicht."
+    "aufgabenstellung": "Weswegen könnte es nachteilig sein, verteilte Sensoren (z.B. im Bereich Smart City) über Mobilfunk zu verbinden? ",
+    "musterloesung":"Mobilfunkeinheiten benötigen im Vergleich zu anderen Technologien viel Energie. Jeder Sensor muss über eine eigene SIM-Karte verfügen. Austausch des Mobilfunkanbieters benötigt einen Wechsel der SIM-Karte in jedem Sensorknoten. Dies ist evtl. nicht möglich. "
   },
   {
-    "id": "ea1-parallelität-e",
+    "id": "ea7-2-a",
     "task_type": "FREITEXT",
-    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie nun die Aussage von Gustafsons Gesetz in eigenen Worten zusammen!",
-    "musterloesung": "Gustafson dreht im Vergleich zu Amdahl die Zeilsetzung um. Er stellt fest, dass mit wachsender Anzahl von Prozessoren immer größere Aufgaben bewältigt werden können, weil in einer fest vorgegebenen Zeitspanne der Parallelanteil im Verhältnis zum seriellen Anteil immer stärker dominiert. Analog zu Amdahl steigt auch hier der Speedup mit der Anzahl der Prozessoren und dem parallelisierbaren Anteil, ist aber nicht nach oben beschränkt."
+    "aufgabenstellung": "Nennen Sie den Grund, weswegen in einem WLAN-Netzwerk die Latenz schwanken kann. ",
+    "musterloesung":"In einem WLAN senden die Teilnehmer sobald Daten verfügbar sind. Senden viele andere Stationen, kann es lange dauern, bis der Funkkanal frei wird. Abhängig von der Auslastung verändert sich somit die Latenz. "
   },
   {
-    "id": "ea1-parallelität-f",
+    "id": "ea7-2-b",
     "task_type": "FREITEXT",
-    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Gustafsons Gesetz?",
-    "musterloesung": "Nicht jedes Problem lässt sich beliebig vergrößern. Stattdessen müssen häufig Probleme in fest vorgegebenen zeitlichen Grenzen (sog. Echtzeitbedingunen) gelöst werden. Hier kann Gustafsons Gesetz nicht angewendet werden."
+    "aufgabenstellung": "Hat die schwankende Latenz in WLAN eine praktische Auswirkung? ",
+    "musterloesung":"Nicht für alltägliche Dinge wie Websurfen, Streaming von Videos oder E-Mail. Zeitkritische Anwendungen sind mit einem WLAN allerdings nicht umsetzbar. Ein Roboter, der beispielsweise regelmäßige Steuersignale erwartet kann durch die zeitlich nicht gleichmäßig eintreffenden Daten nicht fehlerfrei gesteuert werden. Beispiel: Ein Roboter erwartet Steuerdaten mit 100Hz. WLAN verzögert einige Pakete um wenige ms. Hierdurch sinkt die Frequenz der eintreffenden Steuerdaten zu stark und der Roboter schaltet ab. "
   },
   {
-    "id": "ea2-strukturen",
-    "task_type": "BEISPIELE",
-    "aufgabenstellung": "Im Kurs haben Sie einige Beispiel für Strukturen in Natur und Technik kennengelernt. Nennen Sie fünf weitere Beispiel für Strukturen aus diesen Bereichen:",
-    "musterloesung": "Beispiele hierfür sind neben vielen anderen: Das Stromnetz, Drahtgebundenes Telekommunikationsnetz, Ausbreitung ansteckender Krankheiten, Sanddünen in der Wüste, Vogel- und Fischschwärme, Hierarchien in Organisationen oder anderen sozialen Gemeinschaften auch bei Tieren. Dies ist natürlich nur eine kleine Auswahl. In der Korrektur wurden auch weitere Beispiele von Strukturen als richtig gewertet."
+    "id": "ea7-3-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Ein häufig genannter Anwendungsfall von 5G Netzwerken ist das autonome Fahren. Was sind in diesem Bereich einige der Herausforderungen? ",
+    "musterloesung":"Die Informationen der Sensoren eines Autos oder mehrere Autos sollen mit geringer Latenz aggregiert und wieder an andere Fahrzeuge gesandt werden.  "
   },
   {
-    "id": "ea3-Signalklassifikation",
-    "task_type": "ZUORDNUNG",
-    "aufgabenstellung": "Tragen Sie die fehlenden Begriffe im nachfolgenden Signalklassifikationsbaum ein:",
-    "musterloesung": "von links oben nach rechts unten: stochastisch, deterministisch, nichtstationär, stationär, quasiperiodisch, nichtperiodisch, periodisch"
+    "id": "ea7-3-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Würde für das autonome Fahren nicht auch ein 4G Netz ausreichen? ",
+    "musterloesung":" Für nicht zeitkritische Anwendungen ja. Soll ein Fahrzeug oder eine Fahrzeugflotte von einem externen System gesteuert werden, muss diese Steuerinstanz so nahe wie möglich an den Basisstationen liegen. Nur hierdurch ist eine geringe Latenz umsetzbar. In einem 4G Netz ist dies nicht vorgesehen. In 5G Netzwerken ist angedacht, dass kleine „Cloud-Systeme“ mit jeder Basisstation verbunden sein können. Diese Mobile Edge Cloud Systeme können eine geringe Latenz zu den verbundenen Teilnehmern erst möglich machen. "
+  },
+    {
+    "id": "ea7-3-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie kann die nächstgelegene MEC ausfindig gemacht werden?",
+    "musterloesung":"Lösung: Es gibt mehrere denkbare Optionen. Eine Option ist es, für die verteilte Anwendung in der MEC eine feste IP-Adresse zu hinterlegen. Diese IP-Adresse wird nicht in das Internet geroutet, sondern nur innerhalb des Netzes des Mobilfunkanbieters. Jede UPF routet die gleiche IP-Adresse an die nächste MEC. Eine weitere Möglichkeit ist das Auffinden über DNS. Hierbei stellt jede UPF einen DNS-Server bereit. Dieser leitet „normale“ DNS-Anfragen wie gewöhnlich weiter. DNS-Anfragen, welche jedoch auf einen Dienst innerhalb der MEC zeigen, werden direkt mit der IP-Adresse der nächsten MEC aufgelöst. Die dritte vorgeschlagene Lösung: Die Anwendung selbst besitzt eine Datenbank. Ruft ein Endgerät einen Dienst auf, welcher auf mehreren MEC verteilt ist, leitet die Anwendung das Endgerät über HTTP-Redirect (oder einen anderen, eigenen Ansatz) zur IP-Adresse oder zum Domainnamen der nächsten MEC."
   },
   {
-    "id": "ea3-Fourierreihe-1",
-    "task_type": "RECHENAUFGABE", 
-    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ Lösung: a0/2 und Rechenweg/Begründung", 
-    "musterloesung": "a0/2 = 0,5; Rechenweg/Begründung: $$\\frac{a_0}{2}$$ lautet: $$\\frac{a_0}{2} =  \\frac{1}{T_0} \\int_{t_0}^{t_0+T_0} x(t) \\, dt$$ Dies entspricht dem arithmetischen Mittel über eine Periode, also im Beispiel genau 0,5."
+    "id": "ea7-4-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen belastet eine Container-Anwendung den Host weniger als eine Anwendung in einer VM? ",
+    "musterloesung":"Eine VM bedeutet, dass ein gesamter PC virtualisiert wird. Darin wird ein Betriebssystem gestartet. Erst darauf kann die eigentliche Anwendung gestartet werden. Das Betriebssystem beansprucht Arbeitsspeicher, Festplattenplatz und CPU-Zyklen, welche nicht der Anwendung zugutekommen. In einem Container wird lediglich die Software gestartet, welche zur Anwendung gehört. Es muss kein zusätzliches Betriebssystem gestartet werden. Zusätzlich muss für eine VM vorab die Anzahl der CPUs, des Arbeitsspeichers und des Festplattenspeichers bekannt sein. Ein Container hingegen kann (dynamisch) die Ressourcen des darunterliegenden Betriebssystems nutzen. "
   },
   {
-    "id": "ea3-Fourierreihe-2",
-    "task_type": "RECHENAUFGABE", 
-    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ ak und Rechenweg/Begründung", 
-    "musterloesung":"$$a_k = \\frac{2 - 2\\cos(\\pi k)}{\\pi^2 k^2} = \\begin{cases} \\dfrac{2}{\\pi^2 k^2}, & k \\\\ \\text{ungerade} \\\\[6pt] 0, & \\text{sonst} \\end{cases}$$; Rechenweg / Begründung: Die Ausgangsformel lautet $$ a_k = \\frac{2}{T_0} \\int_{t_0}^{t_0+T_0} x(t)\\cos(k\\omega_0 t)\\, dt \\quad$$ mit $$\\quad \\omega_0 = \\frac{2\\pi}{T_0} $$ Im konkreten Fall $(T_0 = 2)$ gilt daher $$ a_k = \\int_{-1}^{1} x(t)\\cos(k \\pi t)\\, dt $$ Aus Symmetriegründen genügt es, nur über eine Dreiecksseite zu integrieren und das Ergebnis zu verdoppeln: $$ a_k = 2 \\int_{0}^{1} (1-t)\\cos(k\\pi t)\\, dt $$ Durch Lösung dieses Integrals über partielle Integration kommt man auf das obenstehende Ergebnis."
+    "id": "ea7-4-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie lässt sich eine Anwendung als Container starten? ",
+    "musterloesung":"Es muss zuerst ein Container-Image erstellt werden. In Docker ist dies über eine Textdatei möglich. Hierin ist beschrieben, welche Dateien in das Image kopiert werden, welche Befehle ausgeführt werden sollen, um das fertige Image zu bauen, und welche Funktionen von anderen Images eingebunden werden sollen. Die Dateien, welche die Anwendung sind müssen in das Image kopiert werden. Die auszuführende Datei muss angegeben werden. Ist das Image erstellt muss es innerhalb eines Containers gestartet werden. Hierbei wird die zu ausführende Datei gestartet. "
   },
   {
-    "id": "ea3-Fourierreihe-3",
-    "task_type": "RECHENAUFGABE", 
-    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ bk und Rechenweg/Begründung", 
-    "musterloesung":"bk = 0; Rechenweg/Begründung:  Die Dreiecksfunktion ist gerade und kann daher keine ungeraden Schwingungsanteile enthalten."
+    "id": "ea7-4-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Container-Orchestrierung? ",
+    "musterloesung":"Dies bedeutet, dass Container und Images nicht manuell erstellt und gestartet werden. Stattdessen wird dies von der Orchestrierungslösung übernommen. Hierbei kann die Orchestrierungslösung eine beliebige Anzahl von Containern automatisiert auf einen oder mehrere Hosts übertragen und starten. "
   },
   {
-    "id": "ea4-crc-a",
-    "task_type": "FORMEL_ZAHL",
-    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Geben Sie zunächst das Informationspolynom I(x) in TeX-Notation (ohne Dollarzeichen) an.",
-    "musterloesung": "I(x) = 0·x^15 + 0·x^14 + 1·x^13 + 1·x^12 + 0·x^11 + 0·x^10 + 0·x^9 + 1·x^8 + 1·x^7 + 0·x^6 + 0·x^5 + 0·x^4 + 1·x^3 + 1·x^2 + 0·x^1 + 0·x^0 = x^13 + x^12 + x^8 + x^7 + x^3 + x^2"
+    "id": "ea7-5-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Software Defined Networking? ",
+    "musterloesung":"Der Begriff bedeutet, dass Netzwerkkomponenten (Router, Switche, Firewall, …) über einen zentralen Controller gesteuert werden. Durch diesen Controller lässt sich das Netzwerk programmieren. Hierdurch sind Automatisierungslösungen denkbar, sodass ein Netzwerk bei neuen Anwendungen (z.B. durch eine Orchestrierungslösung) ebenfalls neu konfiguriert wird. "
   },
   {
-    "id": "ea4-crc-d",
-    "task_type": "FORMEL_ZAHL",
-    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Wie lautet der resultierende CRC Prüfwert (binär)?",
-    "musterloesung": "001100011000110011011"
+    "id": "ea7-5-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie ermöglicht TOR eine anonyme Kommunikation im Internet? ",
+    "musterloesung":"TOR baut verschlüsselte Tunnel zu Routern auf. Die Router entschlüsseln die Daten wieder und leiten sie von Ihrer IP-Adresse weiter in das Internet. Ein TOR-Client baut eine Route bestehend aus drei TOR-Routern auf. Zu jedem Router wird eine eigene verschlüsselte Verbindung hergestellt. Wird ein IP-Paket vom Clienten übertragen, „lernen“ die einzelnen Router nur die Information, dass vom direkten Nachbarn etwas gesendet wurde und an welchen Punkt das Paket weitergeroutet wird. Wegen der mehrfachen Verschlüsselung kann nur der letzte TOR-Router die eigentlich übertragenen Daten sehen. Der letzte Router weiß jedoch nicht, von wem die Daten stammen. Innerhalb des TOR-Netzwerkes werde eigene Adressen vergeben."
   }
-
 ]

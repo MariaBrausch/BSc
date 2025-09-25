@@ -39,6 +39,9 @@ for eintrag in data:
     
     antwort_text = promptBuilder.call_model_responses(prompt_text)
 
+    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
+
        
     answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
     answer_path.write_text(antwort_text, encoding="utf-8")
