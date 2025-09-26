@@ -1,28 +1,22 @@
-[Antwort generiert am 19.09.2025 19:04:17]
+[Antwort generiert am 19.09.2025 12:55:48]
 
 ### bewertungskategorie: korrekt 
-**antwort 1**
+**antwort 1**  
+Amdahls Gesetz beschreibt eine Grenze für die Geschwindigkeitserhöhung, die bei der Parallelisierung von Programmen erreicht werden kann. Der serielle Anteil begrenzt die maximale Beschleunigung, da dieser Teil von der Parallelisierung nicht profitiert. Selbst wenn sehr viele Prozessoren benutzt werden, ist die Verbesserung durch Parallelisierung limitiert. Praktisch führen zusätzliche Parallelisierungskosten dazu, dass ab einem gewissen Punkt der Aufwand sogar zunimmt.
 
-Amdahls Gesetz erklärt, dass der maximale Geschwindigkeitszuwachs durch Parallelisierung eines Programms durch dessen seriellen Anteil limitiert wird. Selbst wenn unendlich viele Prozessoren verfügbar sind, wird die Ausführungszeit nie kürzer als die Zeit, die für den seriellen Anteil benötigt wird. Außerdem können höhere Parallelisierungsversuche zu zusätzlichen Kosten durch Kommunikation und Synchronisation führen.
-
-**antwort 2**
-
-Laut Amdahls Gesetz begrenzt der serielle Teil eines Programms die maximale Beschleunigung, die durch Parallelisierung erreicht werden kann. Der Speedup erhöht sich mit dem parallelisierbaren Anteil, aber selbst mit unbegrenzten Prozessoren beschränkt der serielle Anteil die Ausführungszeit. Dabei können auch steigende Kommunikations- und Synchronisationskosten den Nutzen der Parallelisierung schmälern.
+**antwort 2**  
+Das Kernaussage von Amdahls Gesetz ist, dass der serielle Anteil eines Programms die maximale Beschleunigung durch Parallelisierung einschränkt. Egal wie viele Prozessoren eingesetzt werden, der nicht parallelisierbare Anteil bestimmt die obere Grenze der Leistungssteigerung. Mit mehr Prozessoren können auch zusätzliche Synchronisationskosten entstehen, die den Effekt der Parallelisierung weiter dämpfen.
 
 ### bewertungskategorie: teilweise inkorrekt 
-**antwort 1**
+**antwort 1**  
+Laut Amdahls Gesetz hängt der Gewinn aus der Parallelverarbeitung nur vom Anteil des Programms ab, der parallelisiert werden kann. Wenn der Großteil des Programms parallelisierbar ist, kann die Leistung praktisch unbegrenzt steigen. Dennoch gibt es auch Kommunikations- und Synchronisationsaufwände, die die Effizienz verringern können.
 
-Amdahls Gesetz besagt, dass Programme durch Parallelisierung erstaunliche Geschwindigkeitssteigerungen schaffen können, solange der serielle Anteil klein ist. Wenn aber viele Prozessoren genutzt werden, kann man fast gar nicht um den seriellen Anteil herumkommen. Allerdings werden ab einer bestimmten Anzahl an Prozessoren die Vorteile durch die Synchronisationskosten aufgehoben.
-
-**antwort 2**
-
-Nach Amdahls Gesetz ist der parallelisierbare Teil eines Programms entscheidend für den Gesamt-Speedup. Je größer dieser Anteil wird, desto mehr steigt die Leistung. Doch ab einer bestimmten Anzahlsgrenze von Prozessoren wird keine weitere Verbesserung erzielt, da die Synchronisationskosten die Geschwindigkeit begrenzen.
+**antwort 2**  
+Amdahls Gesetz legt fest, dass die Verbesserung durch Parallelisierung direkt proportional zum parallelisierbaren Anteil ist. Trotz theoretisch unendlicher Prozessorenmenge gibt es Abzüge durch erforderliche Kommunikation und Synchronisation, die den Prozess beeinträchtigen können.
 
 ### bewertungskategorie: inkorrekt 
-**antwort 1**   
+**antwort 1**  
+Amdahls Gesetz besagt, dass man durch Erhöhen der Anzahl der Prozessoren immer eine lineare Geschwindigkeitssteigerung bekommt. Dieser Ansatz ignoriert komplett die Existenz eines seriellen Anteils oder zusätzlicher Parallelisierungskosten.
 
-Amdahls Gesetz zeigt, dass man durch Hinzufügen von Prozessoren einen unbegrenzten Geschwindigkeitszuwachs erzielen kann. Solange ein Programm parallelisiert wird, gibt es kaum Begrenzungen für den Speedup, unabhängig vom seriellen Anteil.
-
-**antwort 2**
-
-Amdahls Gesetz beschreibt, dass der Speedup eines Programms direkt proportional zur Anzahl der eingesetzten Prozessoren ist, ohne durch den seriellen Anteil eingeschränkt zu werden. Sobald genug Prozessoren vorhanden sind, kann man die Aufgabe extrem schnell lösen.
+**antwort 2**  
+Nach Amdahls Gesetz kann jegliche Software durch Parallelisierung vollständig beschleunigt werden, ohne Begrenzungen oder zusätzliche Kommunikationskosten. Dies berücksichtigt nicht die tatsächlichen Einschränkungen durch nicht-parallelisierbare Programmteile.
