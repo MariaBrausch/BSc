@@ -60,6 +60,30 @@
     "musterloesung": "Beispiele hierfür sind neben vielen anderen: Das Stromnetz, Drahtgebundenes Telekommunikationsnetz, Ausbreitung ansteckender Krankheiten, Sanddünen in der Wüste, Vogel- und Fischschwärme, Hierarchien in Organisationen oder anderen sozialen Gemeinschaften auch bei Tieren. Dies ist natürlich nur eine kleine Auswahl. In der Korrektur wurden auch weitere Beispiele von Strukturen als richtig gewertet."
   },
   {
+    "id": "ea2-edge-reassignment-und-small-worlds-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden. Bestimmen Sie den Cluster-Koeffizienten für den Ring.",
+    "musterloesung":" Man beachte: Der Knoten, für den der Clusterkoeffizient berechnet werden soll, taucht in der Berechnung selbst gar nicht auf, sondern nur dessen Nachbarn. Jeder Knoten hat 4 direkte Nachbarn. Es gibt somit 6 möglicher Verbindungen (bidirektional).  Der lokale Clusterkoeffizient jedes Knotens ist daher 3/6 = 0,5. Da er für alle Knoten gleich ist, entspricht der Wert gleichzeitig dem globalen Clusterkoeffizienten."
+  },
+  {
+    "id": "ea2-edge-reassignment-und-small-worlds-2",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden.Ermitteln Sie für den Knoten k1 die mittlere Pfadlänge, indem Sie den Durchschnitt der Pfadlängen zu allen anderen Knoten bestimmen.",
+    "musterloesung":"Als Pfadlänge zwischen zwei Knoten wird die minimale Anzahl der Sprünge bezeichnet, die benötigt werden, um von dem einem der beiden Knoten zu dem jeweils anderen zu gelangen. So hat beispielsweise die Pfadlänge zwischen k1 und k8 den Wert 4, der Pfad führt über die Knoten k3, k5 und k7 oder alternativ über die Knoten k3, k5 und k6 .  In Mittel über alle 14 Zielknoten ergibt sich daraus die Pfadlänge Lk1= (1+1+2+2+3+3+4+4+3+3+2+2+1+1)/14 = 16/7"
+  },
+  {
+    "id": "ea2-edge-reassignment-und-small-worlds-3",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden. Ersetzen Sie nun nach dem Modell von Watts & Strogatz eine Verbindung von k1 so, dass k1 mit k8 verbunden ist. Bestimmen Sie nun erneut die durchschnittliche Pfadlänge von k1 zu den anderen Knoten und vergleichen Sie mit a) (Clusterkoeffizient 3/6 = 0,5.)",
+    "musterloesung":"Durch die direkte Verbindung zu k8 verringern sich die Pfadlängen und es ergibt sich: Lk1= (1+1+2+2+3+2+2+1+2+2+3+2+2+1)/14=13/7 Das Edge Reassignment an Knoten 1 verkürzt also die durchschnittliche Pfadlänge von k1 zu den anderen Knoten um 3/16 = 18,75%."
+  },
+  {
+    "id": "ea2-hubs-and-authorities-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sei der folgende Graph: 1->2, 2->1, 2->3, 3->1. Bestimmen Sie die Adjazenzmatrix.",
+    "musterloesung":"A=[[0,1,0],[1,0,1],[1,0,0]]"
+  },
+  {
     "id": "ea3-Signalklassifikation",
     "task_type": "ZUORDNUNG",
     "aufgabenstellung": "Tragen Sie die fehlenden Begriffe im nachfolgenden Signalklassifikationsbaum ein:",
