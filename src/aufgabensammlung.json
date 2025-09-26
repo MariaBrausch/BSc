@@ -1,4 +1,28 @@
-[
+[ 
+  {
+    "id": "ea1-gefangenendilemma-a",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Ein dem Gefangenendilemma ähnliches Problem ist das sogenannte Lift-Dilemma, das sich wie folgt beschreiben lässt: Zwei Nachbarn (A und B) hören gerne laut bei offenem Fenster Heavy Metal und können sich in ihrem Genuss gegenseitig stören. Folgende Kombinationen sind dabei denkbar:Kombination R: Keiner hört Musik : beide erhalten 3 Genusspunkte,Kombination S: B hört Musik, A nicht : B erhält 8 Genusspunkte, A keinen,Kombination T: A hört Musik, B nicht : A erhält 8 Genusspunkte, B keinen,Kombination P: Beide hören Musik : beide erhalten 1 Genusspunkt.Füllen Sie nachfolgende Entscheidungstabelle aus!",
+    "musterloesung":"A ist still, B ist still: R = (3,3) Gesamt: 6, A ist still, B hört Musik: S = (0,8) Gesamt: 8, A hört Musik, B ist still: T = (8,0) Gesamt: 8, A hört Musik, B hört Musik: P = (1,1) Gesamt: 2"
+  },
+  {
+    "id": "ea1-gefangenendilemma-b",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Ein dem Gefangenendilemma ähnliches Problem ist das sogenannte Lift-Dilemma, das sich wie folgt beschreiben lässt: Zwei Nachbarn (A und B) hören gerne laut bei offenem Fenster Heavy Metal und können sich in ihrem Genuss gegenseitig stören. Folgende Kombinationen sind dabei denkbar:Kombination R: Keiner hört Musik : beide erhalten 3 Genusspunkte,Kombination S: B hört Musik, A nicht : B erhält 8 Genusspunkte, A keinen,Kombination T: A hört Musik, B nicht : A erhält 8 Genusspunkte, B keinen,Kombination P: Beide hören Musik : beide erhalten 1 Genusspunkt. Welche Kooperationsstrategie bringt für A und B jeweils über mehrere Runden hinweg den maximalen Nutzen?",
+    "musterloesung":"1. Zug: A hört Musik, B ist still, 2. Zug: A ist still, B hört Musik, 3. Zug: A hört Musik, B ist still, 4. Zug: A ist still, B hört Musik, A erhält insgesamt 16 Genusspunkte, B erhält insgesamt 16 Genusspunkte"
+  },
+  {
+    "id": "ea1-parallelität-a-1",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Wie lautet Amdahls Gesetz in der ausführlichsten Fassung (formale Darstellung)?",
+    "musterloesung":"$$ S = \\frac{1}{(1 - P) + o(N) + \\frac{P}{N}}\\leq\\frac{1}{1-P} \\; $$"
+  },
+  {
+    "id": "ea1-parallelität-a-2",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie lautet Amdahls Gesetz in der ausführlichsten Fassung (formale Darstellung)? Erläutern Sie die Bedeutung der Variablen, die in der Formel benötigt werden:",
+    "musterloesung":"Variablenname: P, Bedeutung: Parallelisierbarer Anteil der Gesamtaufgabe. Variablenname: N, Bedeutung: Anzahl der zur Verfügung stehenden Prozessoren. Variablenname: o(N), Bedeutung: Zeitaufwand (Kosten), der durch Synchronisation u.ä. anfällt und demnach nicht für die Bearbeitung der Aufgabe zur Verfügung steht."
+  },
   {
     "id": "ea1-parallelität-b",
     "task_type": "FREITEXT",
@@ -22,6 +46,12 @@
     "task_type": "FREITEXT",
     "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Gustafsons Gesetz?",
     "musterloesung": "Nicht jedes Problem lässt sich beliebig vergrößern. Stattdessen müssen häufig Probleme in fest vorgegebenen zeitlichen Grenzen (sog. Echtzeitbedingunen) gelöst werden. Hier kann Gustafsons Gesetz nicht angewendet werden."
+  },
+  {
+    "id": "ea2-topologien",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Bestimmen Sie die Kennzahlen für folgende Topologien:  Quadratisches Gitter mit Knotenzahl n^2, Bus mit n Stationen, Ring mit n Stationen, Ring mit n Stationen und unidirektionalen Verweisen, Stern mit n Stationen, d-dimensionaler Hyperwürfel, Vollständig vermaschtes Netz mit n Stationen, Balancierte Baumstruktur vom Grad k und n Elementen.  Clusterkoeffizient und Durchmesser",
+    "musterloesung":"Quadratisches Gitter mit Knotenzahl n^2: Clusterkoeffizient: Kein Nachbar ist direkt mit einem anderen Nachbarn vernetzt. Der globale Clusterkoeffizient hat den Wert 0. Durchmesser: Abstand zweier gegenüberliegender Ecken (Manhattan-Metrik!): 2(n-1);Bus mit n Stationen: Clusterkoeffizient: Hier kann man streiten. • Betrachtet man den Bus als eigene Station (im Sinne einer technischen Einheit), ist kein Knoten direkt mit einem anderen verbunden, sondern jeder nur mit dem Bus. Dann erhält man dasselbe Ergebnis wie beim Stern, also 0. • Betrachtet man den Bus als multiple Kante zwischen allen Stationen, ist jeder mit jedem vernetzt, der Clusterkoeffizient ist also 1. Durchmesser: Es greift dieselbe Argumentation. • Betrachtet man den Bus als eigene Station, ist der maximale Abstand zwischen zwei Knoten n-1. • Betrachtet man den Bus als multiple Kante zwischen allen Stationen, ist jeder mit jedem vernetzt, der Durchmesser ist also 1.;Ring mit n Stationen: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Die größte Distanz tritt zwischen zwei gegenüberliegenden Knoten auf. Der Durchmesser beträgt n/2.;Ring mit n Stationen und unidirektionalen Verweisen: Clusterkoeffizient: Hier ändert sich nichts, der Clusterkoeffizient ist 0. Durchmesser: Es gibt nur noch eine Richtung durch den Graphen. Jeder Knoten hat zu dem Nachbarn, mit dem er nicht gerichtet verbunden ist, die Distanz von n-1.;Stern mit n Stationen: Clusterkoeffizient: * In der Sternstruktur haben nicht alle Knoten denselben lokalen Clusterkoeffizienten. Die Randknoten haben jeweils nur einen Nachbarn. Dieser hat d mögliche und 0 tatsächliche Verbindungen zu anderen Nachbarn, der lokale Clusterkoeffizient ist 0/0 und damit formal nicht bestimmt. • Versteht man den Clusterkoeffizienten als Maß für Transitivität, erhält man trotzdem für den lokalen Clusterkoeffizienten der Randknoten den Wert 0, sodass der globale Clusterkoeffizient den Wert 0 hat. Durchmesser: Um zwei Randknoten zu verbinden, muss stets durch den Zentrumsknoten vermittelt werden, der Durchmesser ist 2.;d-dimensionaler Hyperwürfel: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Per Definition des Hyperwürfels: In jeder Dimension ist nur ein Vermittlungsschritt notwendig.;Vollständig vermaschtes Netz mit n Stationen: Clusterkoeffizient: Jeder ist mit jedem vernetzt. Der Clusterkoeffizient hat den Wert 1. Durchmesser: Jeder ist mit jedem vernetzt. Der Durchmesser ist 1.;Balancierter k-närer Baum mit n Elementen: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Per Definition ist die Höhe des k-nären balancierten Baumes maximal c·log_k(n), wobei c eine Konstante ist. Zwei Blätter, die nur über den Wurzelknoten erreicht werden können, haben demnach den Abstand 2·c·log_k(n).;"
   },
   {
     "id": "ea2-strukturen",
@@ -66,6 +96,18 @@
     "musterloesung": "Begründung: Das Abtasttheorem besagt, dass ein Signal mit mehr als der doppelten im Signal maximal auftretenden Frequenz abgetastet werden muss, um dieses fehlerfrei rekonstruieren zu können. Die maximale (und einzige) Frequenz, die im Signal auftritt, ist 10 Hz, also muss die Abtastfrequenz über 20 Hz liegen."
   },
   {
+    "id": "ea4-huffmann-codierung-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "Gegeben sei ein Alphabet A bestehend aus den Symbolen A={S1, S2, S3, S4, S5, S6, S7, S8} mit folgenden Symbolauftrittswahrscheinlichkeiten: S1=0,14, S2=0,18, S3=0,08, S4=0,12, S5=0,32, S6=0,01, S7=0,06, S8=0,09. Wie viele Stellen werden zur Codierung dieses Alphabets mindestens benötigt, wenn ein Code ohne jegliche Komprimierung verwendet wird?",
+    "musterloesung":"Lösung: 3 (Wert) Bit (Einheit), Begründung: Es sind 8 Symbole zu kodieren. Dazu werden 3 Binärstellen benötigt (ld 8 = 3)."
+  },
+  {
+    "id": "ea4-huffmann-codierung-3-a",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "S1=100, S2=00, S3=1011, S4=011, S5=11, S6=10100, S7=10101, S8=010.Berechnen Sie die durchschnittliche Codewortlänge für den Code.",
+    "musterloesung":" Lösung: 2,72 (Wert) Bit (Einheit). Rechenweg:Für jedes Symbol wird Auftrittswahrscheinlichkeit mit Codewortlänge multipliziert. Dieser Wert wird über alle Symbole summiert.0,14 · 3 Bit + 0,18 · 2 Bit + 0,08 · 4 Bit + 0,12 · 3 Bit + 0,32 · 2 Bit + 0,01 · 5 Bit + 0,06 · 5 Bit + 0,09 · 3 Bit = 2,72"
+  },
+  {
     "id": "ea4-crc-a",
     "task_type": "FORMEL_ZAHL",
     "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Geben Sie zunächst das Informationspolynom I(x) in TeX-Notation (ohne Dollarzeichen) an.",
@@ -77,7 +119,25 @@
     "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Wie lautet der resultierende CRC Prüfwert (binär)?",
     "musterloesung": "001100011000110011011"
   },
+  {
+    "id": "ea4-huffmann-codierung-3-b",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Um welchen Anteil (prozentual) verringert sich die mittlere Codewortlänge im Vergleich zu der in Aufgabenteil 1 gefundenen Antwort?(2,72 Bit)",
+    "musterloesung":" Lösung: 9,3 Prozent, Rechenweg: 3 Bit - 2,72 Bit = 0,28 Bit Verbesserung 0,28 Bit /3 Bit = 0,0933333333333 "
+  },
     {
+    "id": "ea5-OSI-Schichtenmodell",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": " Ordnen Sie folgende Aufgaben, Verfahren bzw. Protokolle der richtigen Schicht des OSI-ReferenzModells zu, indem Sie die entsprechende Schichtnummer in die rechte Spalte eintragen:Wegevermittlung, Frame-Bildung, Cookie-Management, Bit-Übertragung, Paketierung, Segmentierung, Ende-zu-Ende-Vermittlung, Dienst-zu-Dienst-Vermittlung, Leitungskodierung, Medienzugriffskontrolle, Network Address Translation, Flusskontrolle, Aufbau & Verwaltung virtueller Verbindungen, Verwaltung von verbindungsunabhängigen Sitzungen, Einheitliche Darstellung von Daten in heterogenen Systemen, CSMA/CD, IP, UDP, TCP, DNS, HTTP, ICMP, Sockets",
+    "musterloesung":"Wegevermittlung: Schicht 3 (Vermittlung), Frame-Bildung: Schicht 2 (Sicherung), Cookie-Management: Schicht 5 (Sitzung), Bit-Übertragung: Schicht 1 (Bitübertragung), Paketierung: Schicht 3 (Vermittlung), Segmentierung: Schicht 2 (Sicherung) oder Schicht 4 (Transport, spez. TCP), Ende-zu-Ende-Vermittlung: Schicht 3 (Vermittlung), Dienst-zu-Dienst-Vermittlung: Schicht 4 (Transport), Leitungskodierung: Schicht 1, ggf. noch Schicht 2, Medienzugriffskontrolle: Schicht 2, Network Address Translation: Schicht 3 (Vermittlung), Flusskontrolle: Schicht 2 (Switches) oder Schicht 4 (TCP), Aufbau & Verwaltung virtueller Verbindungen: Schicht 4 (Transport), ggf. Schicht 5 (Sitzung), Verwaltung von verbindungsunabhängigen Sitzungen: Schicht 5 (Sitzung), Einheitliche Darstellung von Daten in heterogenen Systemen: Schicht 6 (Darstellung), CSMA/CD: Schicht 2 (Medienzugriff), IP: Schicht 3 (Vermittlung), UDP: Schicht 4 (Transport), TCP: Schicht 4 (Transport), DNS: Schicht 7 (Anwendung), HTTP: Schicht 7 (Anwendung), ICMP: Schicht 3 (Vermittlung), Sockets: Schicht 4"
+  },
+  {
+    "id": "ea5-Dijkstra-Algorithmus",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": " Ermitteln Sie mit Hilfe des Dijkstra-Algorithmus die kürzesten Pfade von Knoten A zu den anderen Knoten. Graph:A-B:1, A-D:2, B-C:3, B-E:1, C-D:2, C-F:3, D-G:3, E-F:1, E-H:2, F-G:1, F-I:4, G-J:1, H-I:1, I-J:1 Tragen Sie die Kosten in die Tabelle ein:",
+    "musterloesung":"B: 1, A; C: 4, B; D: 2, A; E: 2, B; F: 3, E; G: 4, F; H: 4, E; I: 5, H; J: 5, G"
+  },
+  {
     "id": "ea6-1-b",
     "task_type": "FREITEXT",
     "aufgabenstellung": "Weswegen denken Sie, dass drahtlose Kopfhörer über Bluetooth und nicht über WLAN mit Ihrem Smartphone gekoppelt sind?",
@@ -148,6 +208,78 @@
     "task_type": "FREITEXT",
     "aufgabenstellung": "Weswegen befinden sich Satelliten zur Internetanbindung in einem niedrigen Orbit? ",
     "musterloesung":"Der niedrige Orbit verringert die Signallaufzeit. Die Latenz wird hierdurch geringer."
+  },
+   {
+    "id": "ea7-1-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Nennen Sie Anforderungen im Bereich Smart City",
+    "musterloesung":"Verteilte Sensoren, teils innerhalb Gebäude, Straßen oder Laternen verbaut. Lebensdauer mehrere Jahre (teilweise ohne externe Stromversorgung). Jeder Sensor sendet periodisch kleine Datenmengen. "
+  },
+  {
+    "id": "ea7-1-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen könnte es nachteilig sein, verteilte Sensoren (z.B. im Bereich Smart City) über Mobilfunk zu verbinden? ",
+    "musterloesung":"Mobilfunkeinheiten benötigen im Vergleich zu anderen Technologien viel Energie. Jeder Sensor muss über eine eigene SIM-Karte verfügen. Austausch des Mobilfunkanbieters benötigt einen Wechsel der SIM-Karte in jedem Sensorknoten. Dies ist evtl. nicht möglich. "
+  },
+  {
+    "id": "ea7-2-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Nennen Sie den Grund, weswegen in einem WLAN-Netzwerk die Latenz schwanken kann. ",
+    "musterloesung":"In einem WLAN senden die Teilnehmer sobald Daten verfügbar sind. Senden viele andere Stationen, kann es lange dauern, bis der Funkkanal frei wird. Abhängig von der Auslastung verändert sich somit die Latenz. "
+  },
+  {
+    "id": "ea7-2-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Hat die schwankende Latenz in WLAN eine praktische Auswirkung? ",
+    "musterloesung":"Nicht für alltägliche Dinge wie Websurfen, Streaming von Videos oder E-Mail. Zeitkritische Anwendungen sind mit einem WLAN allerdings nicht umsetzbar. Ein Roboter, der beispielsweise regelmäßige Steuersignale erwartet kann durch die zeitlich nicht gleichmäßig eintreffenden Daten nicht fehlerfrei gesteuert werden. Beispiel: Ein Roboter erwartet Steuerdaten mit 100Hz. WLAN verzögert einige Pakete um wenige ms. Hierdurch sinkt die Frequenz der eintreffenden Steuerdaten zu stark und der Roboter schaltet ab. "
+  },
+  {
+    "id": "ea7-3-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Ein häufig genannter Anwendungsfall von 5G Netzwerken ist das autonome Fahren. Was sind in diesem Bereich einige der Herausforderungen? ",
+    "musterloesung":"Die Informationen der Sensoren eines Autos oder mehrere Autos sollen mit geringer Latenz aggregiert und wieder an andere Fahrzeuge gesandt werden.  "
+  },
+  {
+    "id": "ea7-3-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Würde für das autonome Fahren nicht auch ein 4G Netz ausreichen? ",
+    "musterloesung":" Für nicht zeitkritische Anwendungen ja. Soll ein Fahrzeug oder eine Fahrzeugflotte von einem externen System gesteuert werden, muss diese Steuerinstanz so nahe wie möglich an den Basisstationen liegen. Nur hierdurch ist eine geringe Latenz umsetzbar. In einem 4G Netz ist dies nicht vorgesehen. In 5G Netzwerken ist angedacht, dass kleine „Cloud-Systeme“ mit jeder Basisstation verbunden sein können. Diese Mobile Edge Cloud Systeme können eine geringe Latenz zu den verbundenen Teilnehmern erst möglich machen. "
+  },
+    {
+    "id": "ea7-3-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie kann die nächstgelegene MEC ausfindig gemacht werden?",
+    "musterloesung":"Lösung: Es gibt mehrere denkbare Optionen. Eine Option ist es, für die verteilte Anwendung in der MEC eine feste IP-Adresse zu hinterlegen. Diese IP-Adresse wird nicht in das Internet geroutet, sondern nur innerhalb des Netzes des Mobilfunkanbieters. Jede UPF routet die gleiche IP-Adresse an die nächste MEC. Eine weitere Möglichkeit ist das Auffinden über DNS. Hierbei stellt jede UPF einen DNS-Server bereit. Dieser leitet „normale“ DNS-Anfragen wie gewöhnlich weiter. DNS-Anfragen, welche jedoch auf einen Dienst innerhalb der MEC zeigen, werden direkt mit der IP-Adresse der nächsten MEC aufgelöst. Die dritte vorgeschlagene Lösung: Die Anwendung selbst besitzt eine Datenbank. Ruft ein Endgerät einen Dienst auf, welcher auf mehreren MEC verteilt ist, leitet die Anwendung das Endgerät über HTTP-Redirect (oder einen anderen, eigenen Ansatz) zur IP-Adresse oder zum Domainnamen der nächsten MEC."
+  },
+  {
+    "id": "ea7-4-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen belastet eine Container-Anwendung den Host weniger als eine Anwendung in einer VM? ",
+    "musterloesung":"Eine VM bedeutet, dass ein gesamter PC virtualisiert wird. Darin wird ein Betriebssystem gestartet. Erst darauf kann die eigentliche Anwendung gestartet werden. Das Betriebssystem beansprucht Arbeitsspeicher, Festplattenplatz und CPU-Zyklen, welche nicht der Anwendung zugutekommen. In einem Container wird lediglich die Software gestartet, welche zur Anwendung gehört. Es muss kein zusätzliches Betriebssystem gestartet werden. Zusätzlich muss für eine VM vorab die Anzahl der CPUs, des Arbeitsspeichers und des Festplattenspeichers bekannt sein. Ein Container hingegen kann (dynamisch) die Ressourcen des darunterliegenden Betriebssystems nutzen. "
+  },
+  {
+    "id": "ea7-4-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie lässt sich eine Anwendung als Container starten? ",
+    "musterloesung":"Es muss zuerst ein Container-Image erstellt werden. In Docker ist dies über eine Textdatei möglich. Hierin ist beschrieben, welche Dateien in das Image kopiert werden, welche Befehle ausgeführt werden sollen, um das fertige Image zu bauen, und welche Funktionen von anderen Images eingebunden werden sollen. Die Dateien, welche die Anwendung sind müssen in das Image kopiert werden. Die auszuführende Datei muss angegeben werden. Ist das Image erstellt muss es innerhalb eines Containers gestartet werden. Hierbei wird die zu ausführende Datei gestartet. "
+  },
+  {
+    "id": "ea7-4-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Container-Orchestrierung? ",
+    "musterloesung":"Dies bedeutet, dass Container und Images nicht manuell erstellt und gestartet werden. Stattdessen wird dies von der Orchestrierungslösung übernommen. Hierbei kann die Orchestrierungslösung eine beliebige Anzahl von Containern automatisiert auf einen oder mehrere Hosts übertragen und starten. "
+  },
+  {
+    "id": "ea7-5-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Software Defined Networking? ",
+    "musterloesung":"Der Begriff bedeutet, dass Netzwerkkomponenten (Router, Switche, Firewall, …) über einen zentralen Controller gesteuert werden. Durch diesen Controller lässt sich das Netzwerk programmieren. Hierdurch sind Automatisierungslösungen denkbar, sodass ein Netzwerk bei neuen Anwendungen (z.B. durch eine Orchestrierungslösung) ebenfalls neu konfiguriert wird. "
+  },
+  {
+    "id": "ea7-5-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie ermöglicht TOR eine anonyme Kommunikation im Internet? ",
+    "musterloesung":"TOR baut verschlüsselte Tunnel zu Routern auf. Die Router entschlüsseln die Daten wieder und leiten sie von Ihrer IP-Adresse weiter in das Internet. Ein TOR-Client baut eine Route bestehend aus drei TOR-Routern auf. Zu jedem Router wird eine eigene verschlüsselte Verbindung hergestellt. Wird ein IP-Paket vom Clienten übertragen, „lernen“ die einzelnen Router nur die Information, dass vom direkten Nachbarn etwas gesendet wurde und an welchen Punkt das Paket weitergeroutet wird. Wegen der mehrfachen Verschlüsselung kann nur der letzte TOR-Router die eigentlich übertragenen Daten sehen. Der letzte Router weiß jedoch nicht, von wem die Daten stammen. Innerhalb des TOR-Netzwerkes werde eigene Adressen vergeben."
   }
 
 ]

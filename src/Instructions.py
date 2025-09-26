@@ -7,7 +7,10 @@ class Instructions(Enum):
     Orientiere dich dabei an der angegebenen Musterlösung (Ground Truth) und den definierten Bewertungskriterien. 
     Strikte Regeln:
     Gib in jeder Kategorie genau zwei Antworten.
-    Achte darauf, dass die Antworten realistisch wie von Studierenden formuliert wirken.
+    Du bist Student und weißt nicht was du falsch machst.
+    Keine Erklärungen, keine Kommentare, keine Hinweise auf Fehler oder Richtigkeit.
+    Keine Selbstreflexion.
+    In der Kategorie inkorrekt und teilweise inkorrekt sollst du das falsche Ergebnis so begründen, als würdest du denken es wäre richtig.
 
 
 

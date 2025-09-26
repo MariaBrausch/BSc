@@ -14,7 +14,7 @@ task_criteria = {
         "Inhaltliche Korrektheit", "Vollständigkeit", "Struktur", "Nachvollziehbarkeit"
     ],
     TaskType.ZUORDNUNG: [
-        "Korrektheit der Zuordnung"
+        "Korrektheit der Zuordnung", "Vollständigkeit"
     ],
     TaskType.FORMEL_ZAHL: [
         "Numerische Genauigkeit", "Einheiten", "Formel wird in LaTeX Form angegeben"
