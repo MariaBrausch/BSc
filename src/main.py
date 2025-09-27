@@ -4,6 +4,7 @@ from PromptType import PromptType
 from TaskType import TaskType
 from datetime import datetime
 from prompt_builder import PromptBuilder
+from evaluation import Evaluation
 
 promptBuilder = PromptBuilder()
 
@@ -24,29 +25,29 @@ out_dir_C = Path("strategie_C")
 out_dir_C.mkdir(exist_ok=True)
 
 #Beispielantworten erstellen
-for eintrag in data:
-    prompt_type = PromptType.BEISPIELANTWORTEN
-    task_type = TaskType[eintrag["task_type"]]
-    aufgabe = eintrag["aufgabenstellung"]
-    musterlsg = eintrag["musterloesung"]
+# for eintrag in data:
+#     prompt_type = PromptType.BEISPIELANTWORTEN
+#     task_type = TaskType[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     musterlsg = eintrag["musterloesung"]
 
 
-    prompt_text = promptBuilder.build_prompt(prompt_type, task_type, aufgabe, musterlsg, None, None)
+#     prompt_text = promptBuilder.build_prompt(prompt_type, task_type, aufgabe, musterlsg, None, None)
 
-    prompt_path = out_dir / f"prompt_{eintrag['id']}.txt"
-    prompt_path.write_text(prompt_text, encoding="utf-8")
+#     prompt_path = out_dir / f"prompt_{eintrag['id']}.txt"
+#     prompt_path.write_text(prompt_text, encoding="utf-8")
 
     
-    antwort_text = promptBuilder.call_model_responses(prompt_text)
+#     antwort_text = promptBuilder.call_model_responses(prompt_text)
 
-    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
+#     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+#     antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
 
        
-    answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
-    answer_path.write_text(antwort_text, encoding="utf-8")
+#     answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
+#     answer_path.write_text(antwort_text, encoding="utf-8")
 
-    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
+#     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 
 # #Beispiel für STRATEGIEA      
 # for eintrag in data: 
@@ -61,8 +62,14 @@ for eintrag in data:
 
 #     antwort_text = promptBuilder.call_model_responses(prompt_text)
 
-#     answer_path = out_dir_A/ f"antwort_strategieA_{eintrag['id']}.txt"
+#     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+#     antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
+
+       
+#     answer_path = out_dir_A / f"antwort_{eintrag['id']}.txt"
 #     answer_path.write_text(antwort_text, encoding="utf-8")
+
+#     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 
 # #Beispiel für STRATEGIEB
 # for eintrag in data:
@@ -105,3 +112,8 @@ for eintrag in data:
 #     answer_path.write_text(antwort_text, encoding="utf-8")
 
 
+#Auswertung der Antworten
+evaluator = Evaluation()
+
+ergebnisse = evaluator.count_all_answers(f"strategie_A")
+print(f"Ergebnisse für Strategie A: {ergebnisse}")

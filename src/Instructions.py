@@ -25,7 +25,10 @@ class Instructions(Enum):
     **antwort 1**   
     **antwort 2**
     """
-    STRATEGIEA = """Du bekommst eine Aufgabenstellung, Bewertungsrubrik und eine studentische Antwort. Bewerte die studentische Antwort auf Basis der Bewertungsrubrik.
+    STRATEGIEA = """
+    Du bekommst eine Aufgabenstellung, Bewertungsrubrik und eine studentische Antwort. Bewerte die studentische Antwort auf Basis der Bewertungsrubrik.
+    Ausgabeformat:
+    ### bewertungskategorie: <korrekt/teilweise inkorrekt/inkorrekt>
     """
     STRATEGIEB ="""Du bist ein erfahrener Prüfer im Modul Kommunikations- und Rechnernetze. Deine Aufgabe ist es, Einsendeaufgaben objektiv und anhand einer festen Bewertungsrubrik zu korrigieren. Du bekommst eine Aufgabenstellung, einige Beispiele für studentische Antworten mit unterschiedlichen Bewertungskategorien und eine weitere studentische Antwort, die du bewerten sollst.
     """
