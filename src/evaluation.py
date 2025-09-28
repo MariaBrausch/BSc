@@ -1,10 +1,12 @@
 from textwrap import dedent
 import json
 from pathlib import Path
+
 from PromptType import PromptType
 from Instructions import Instructions
 from TaskType import TaskType
 from TaskType import task_criteria, task_categories, task_rubrics
+import pandas as pd
 
 
 
@@ -28,6 +30,21 @@ class Evaluation:
                             return "korrekt"
         except Exception as e:
             print(f"Fehler beim Lesen von {pfad}: {e}")
+        return "unbekannt"
+    
+    def input_category(self, filename: str) -> str:
+        """
+        Zieht die EINGABE-Kategorie aus dem Dateinamen.
+        Akzeptiert Varianten mit Leer-/Unterstrichen etc.
+        Beispielnamen: ...-korrekt.txt, ...-teilweise_inkorrekt.txt, ...-inkorrekt.txt
+        """
+        s = filename.lower().replace("_", "-").replace(" ", "-")
+        if "teilweise-inkorrekt" in s:
+            return "teilweise inkorrekt"
+        elif "inkorrekt" in s:     
+            return "inkorrekt"
+        elif "korrekt" in s:
+            return "korrekt"
         return "unbekannt"
     
 
@@ -55,3 +72,16 @@ class Evaluation:
             "inkorrekt": inkorrekt,
             "unbekannt": unbekannt
         }
+    
+    def collect_answers_table(self, ordner: str, strategie_name: str, kategorie_eingabe:str) -> pd.DataFrame:
+        rows = []
+        #rows.append(["Strategie", "Kategorie Eingabe", "Ausgabe Kategorie korrekt", "Ausgabe Kategorie teilweise inkorrekt", "Ausgabe Kategorie inkorrekt"])
+        #for datei in Path(ordner).glob("antwort*.txt"):
+        kategorie_ausgabe = self.count_all_answers(ordner)
+        rows.append([strategie_name, kategorie_eingabe, kategorie_ausgabe.get("korrekt", "fehler"), kategorie_ausgabe.get("teilweise inkorrekt", "fehler"), kategorie_ausgabe.get("inkorrekt", "fehler")])        
+        
+        df = pd.DataFrame(
+        rows,
+        columns=["Strategie", "Eingabe", "Ausgabe korrekt", "Ausgabe teilweise inkorrekt", "Ausgabe inkorrekt"]
+        )
+        return df

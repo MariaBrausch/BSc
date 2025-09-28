@@ -5,6 +5,7 @@ from TaskType import TaskType
 from datetime import datetime
 from prompt_builder import PromptBuilder
 from evaluation import Evaluation
+import pandas as pd
 
 promptBuilder = PromptBuilder()
 
@@ -50,26 +51,34 @@ out_dir_C.mkdir(exist_ok=True)
 #     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 
 # #Beispiel für STRATEGIEA      
-# for eintrag in data: 
-#     prompt_type = PromptType.STRATEGIEA
-#     task_type = TaskType[eintrag["task_type"]]
-#     aufgabe = eintrag["aufgabenstellung"]
-#     studentischeantwort = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "korrekt", 1)
-#     prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort)
+for eintrag in data: 
+    prompt_type = PromptType.STRATEGIEA
+    task_type = TaskType[eintrag["task_type"]]
+    aufgabe = eintrag["aufgabenstellung"]
 
-#     prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}.txt"
-#     prompt_path.write_text(prompt_text, encoding="utf-8")
+    eingabe_korrekt = "korrekt"
+    eingabe_teilweise = "teilweise inkorrekt"
+    eingabe_inkorrekt = "inkorrekt"
 
-#     antwort_text = promptBuilder.call_model_responses(prompt_text)
+    studentischeantwort_korrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}_{eingabe_korrekt}.txt", eingabe_korrekt, 1)
+    prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort_korrekt)
 
-#     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-#     antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
+    
+
+
+    prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}.txt"
+    prompt_path.write_text(prompt_text, encoding="utf-8")
+
+    antwort_text = promptBuilder.call_model_responses(prompt_text)
+
+    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
 
        
-#     answer_path = out_dir_A / f"antwort_{eintrag['id']}.txt"
-#     answer_path.write_text(antwort_text, encoding="utf-8")
+    answer_path = out_dir_A / f"antwort_{eintrag['id']}.txt"
+    answer_path.write_text(antwort_text, encoding="utf-8")
 
-#     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
+    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 
 # #Beispiel für STRATEGIEB
 # for eintrag in data:
@@ -117,3 +126,5 @@ evaluator = Evaluation()
 
 ergebnisse = evaluator.count_all_answers(f"strategie_A")
 print(f"Ergebnisse für Strategie A: {ergebnisse}")
+darstellung = evaluator.collect_answers_table(f"strategie_A", "Strategie A", "korrekt")
+print(darstellung)
