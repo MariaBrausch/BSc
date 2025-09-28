@@ -48,40 +48,56 @@ class Evaluation:
         return "unbekannt"
     
 
-    def count_all_answers(self, ordner: str):
-        korrekt = 0
-        teilweise_inkorrekt = 0
-        inkorrekt = 0
-        unbekannt = 0
+    def count_by_input_category(self, ordner: str):
+            kategorien = ["korrekt", "teilweise inkorrekt", "inkorrekt"]
+            matrix = {input: {output: 0 for output in kategorien} for input in kategorien}
+            unknown_input_files = []
+            unknown_output_files = []
 
-        for datei in Path(ordner).glob("antwort*.txt"):
-            kategorie = self.classify_answer(datei)
-            if kategorie == "korrekt":
-                korrekt += 1
-            elif kategorie == "teilweise inkorrekt":
-                teilweise_inkorrekt += 1
-            elif kategorie == "inkorrekt":
-                inkorrekt += 1
-            else:
-                unbekannt += 1
-                print(f"Unbekannt in Datei: {datei}")
+            for datei in Path(ordner).glob("antwort*.txt"):
+                input = self.input_category(datei.name)   # EINGABE aus Dateiname
+                output = self.classify_answer(datei)             # AUSGABE aus Inhalt
 
-        return {
-            "korrekt": korrekt,
-            "teilweise inkorrekt": teilweise_inkorrekt,
-            "inkorrekt": inkorrekt,
-            "unbekannt": unbekannt
-        }
-    
-    def collect_answers_table(self, ordner: str, strategie_name: str, kategorie_eingabe:str) -> pd.DataFrame:
+                if input not in matrix:
+                    unknown_input_files.append(str(datei))
+                    continue
+
+                if output in matrix[input]:
+                    matrix[input][output] += 1
+                else:
+                    unknown_output_files.append(str(datei))
+
+            return matrix, unknown_input_files, unknown_output_files
+
+
+    def collect_answers_table(self, ordner: str, strategie_name: str, kategorie_eingabe: str | None = None) -> pd.DataFrame:
+        matrix, unk_inp, unk_out = self.count_by_input_category(ordner)
+
+        # Falls nur eine bestimmte Eingabezeile gewünscht ist
+        inputs = [kategorie_eingabe] if kategorie_eingabe else ["korrekt", "teilweise inkorrekt", "inkorrekt"]
+
         rows = []
-        #rows.append(["Strategie", "Kategorie Eingabe", "Ausgabe Kategorie korrekt", "Ausgabe Kategorie teilweise inkorrekt", "Ausgabe Kategorie inkorrekt"])
-        #for datei in Path(ordner).glob("antwort*.txt"):
-        kategorie_ausgabe = self.count_all_answers(ordner)
-        rows.append([strategie_name, kategorie_eingabe, kategorie_ausgabe.get("korrekt", "fehler"), kategorie_ausgabe.get("teilweise inkorrekt", "fehler"), kategorie_ausgabe.get("inkorrekt", "fehler")])        
-        
+        for inp in inputs:
+            counts = matrix.get(inp, {"korrekt": 0, "teilweise inkorrekt": 0, "inkorrekt": 0})
+            rows.append([
+                strategie_name,
+                inp,
+                counts["korrekt"],
+                counts["teilweise inkorrekt"],
+                counts["inkorrekt"]
+            ])
+
         df = pd.DataFrame(
-        rows,
-        columns=["Strategie", "Eingabe", "Ausgabe korrekt", "Ausgabe teilweise inkorrekt", "Ausgabe inkorrekt"]
+            rows,
+            columns=["Strategie", "Eingabe", "Ausgabe korrekt", "Ausgabe teilweise inkorrekt", "Ausgabe inkorrekt"]
         )
+
+        # Optional: zur Kontrolle unbekannte Dateien melden
+        if unk_inp:
+            print("Unbekannte EINGABE (Dateiname enthält keine Kategorie):")
+            for f in unk_inp: print(" -", f)
+        if unk_out:
+            print("Unbekannte AUSGABE (Dateiinhalt ohne Kategoriezeile):")
+            for f in unk_out: print(" -", f)
+
         return df
