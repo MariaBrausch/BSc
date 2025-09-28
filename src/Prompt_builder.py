@@ -151,20 +151,5 @@ Studentische Antwort:
             print(f"Ein Fehler ist aufgetreten: {e}")
             return "Ein Fehler ist aufgetreten."
 
-# Examples for testing
-correct_examples = [
-    "Amdahls Gesetz beschreibt, wie die Leistungssteigerung eines Programms durch Parallelisierung aufgrund des seriellen Anteils limitiert wird. Selbst wenn man die Anzahl der Prozessoren erhöht, bleibt die Laufzeit durch den nicht-parallelisierbaren Teil begrenzt. Mit mehr Prozessoren kommen auch Kommunikations- und Synchronisationskosten hinzu, die den Nutzen der zusätzlichen Prozessoren einschränken können.",
-    "Laut Amdahls Gesetz beschränkt der serielle Teil eines Programms die mögliche Beschleunigung durch Parallelverarbeitung. Egal wie viele Prozessoren eingesetzt werden, es gibt immer eine Grenze der Effizienz, da der serielle Anteil immer verarbeitet werden muss. Ab einer bestimmten Anzahl von Prozessoren kann die Effizienz sogar abnehmen, da die Koordination zwischen den Prozessoren zusätzlichen Aufwand erzeugt."
-]
-
-partially_correct_examples = [
-    "Amdahls Gesetz erklärt, dass Programmgeschwindigkeiten unbegrenzt erhöht werden können, solange der parallele Anteil ausreicht. In der Praxis gibt es jedoch synchronisationstechnische Grenzen, die dazu führen, dass der Zeitaufwand nicht völlig eliminiert werden kann, selbst mit vielen Prozessoren.",
-    "Nach Amdahls Gesetz steigt die Effizienz von Programmen permanent, da mehr Teile parallelisiert werden können. Die serielle Bearbeitung behindert allerdings ab einem Punkt den Fortschritt weniger stark als Kommunikationskosten, was beachtet werden muss."
-]
-
-incorrect_examples = [
-    "Amdahls Gesetz bedeutet, dass je mehr Prozessoren man hinzufügt, desto schneller wird ein Programm, unabhängig davon, wie viel davon seriell ist. Der serielle Teil hat keinen wirklichen Einfluss auf die endgültige Leistung.",
-    "Nach Amdahls Gesetz passiert nichts, wenn man mehr Prozessoren verwendet, da nur die Anzahl der parallelen Aufgaben relevant ist. Serielle Abschnitte sind irrelevant und beeinflussen die Geschwindigkeit nicht."
-]
 
 

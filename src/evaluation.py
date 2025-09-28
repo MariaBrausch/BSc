@@ -70,7 +70,7 @@ class Evaluation:
             return matrix, unknown_input_files, unknown_output_files
 
 
-    def collect_answers_table(self, ordner: str, strategie_name: str, kategorie_eingabe: str | None = None) -> pd.DataFrame:
+    def collect_answers_table(self, ordner: str, strategie_name: str,  kategorie_eingabe: str | None = None) -> pd.DataFrame:
         matrix, unk_inp, unk_out = self.count_by_input_category(ordner)
 
         # Falls nur eine bestimmte Eingabezeile gewünscht ist
@@ -91,6 +91,7 @@ class Evaluation:
             rows,
             columns=["Strategie", "Eingabe", "Ausgabe korrekt", "Ausgabe teilweise inkorrekt", "Ausgabe inkorrekt"]
         )
+
 
         # Optional: zur Kontrolle unbekannte Dateien melden
         if unk_inp:
