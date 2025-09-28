@@ -5,7 +5,7 @@ from TaskType import TaskType
 from datetime import datetime
 from prompt_builder import PromptBuilder
 from evaluation import Evaluation
-import pandas as pd
+
 
 promptBuilder = PromptBuilder()
 
