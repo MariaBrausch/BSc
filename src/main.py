@@ -1,186 +1,205 @@
 import json
 from pathlib import Path
-from promptType import PromptType
-from taskType import TaskType
+from promptTyp import PromptTyp
+from aufgabenTyp import AufgabenTyp
 from datetime import datetime
-from prompt_builder import PromptBuilder
+from promptErsteller import PromptErsteller
 from evaluation import Evaluation
 
 
-promptBuilder = PromptBuilder()
+promptErsteller = PromptErsteller()
 
-
+# Aufgaben aus JSON-Datei laden
 with open("aufgaben.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+    daten = json.load(f)
 
-out_dir = Path("prompts_und_antworten")
-out_dir.mkdir(exist_ok=True)
+# Ausgabeordner vorbereiten
+ausgabe_ordner = Path("prompts_und_antworten")
+ausgabe_ordner.mkdir(exist_ok=True)
 
-out_dir_A = Path("strategie_A")
-out_dir_A.mkdir(exist_ok=True)
+ordner_A = Path("strategie_A")
+ordner_A.mkdir(exist_ok=True)
 
-out_dir_B = Path("strategie_B")
-out_dir_B.mkdir(exist_ok=True)
+ordner_B = Path("strategie_B")
+ordner_B.mkdir(exist_ok=True)
 
-out_dir_C = Path("strategie_C")
-out_dir_C.mkdir(exist_ok=True)
+ordner_C = Path("strategie_C")
+ordner_C.mkdir(exist_ok=True)
 
-#Beispielantworten erstellen
-# for eintrag in data:
-#     prompt_type = PromptType.BEISPIELANTWORTEN
-#     task_type = TaskType[eintrag["task_type"]]
-#     aufgabe = eintrag["aufgabenstellung"]
-#     musterlsg = eintrag["musterloesung"]
-
-
-#     prompt_text = promptBuilder.build_prompt(prompt_type, task_type, aufgabe, musterlsg, None, None)
-
-#     prompt_path = out_dir / f"prompt_{eintrag['id']}.txt"
-#     prompt_path.write_text(prompt_text, encoding="utf-8")
-
-    
-#     antwort_text = promptBuilder.call_model_responses(prompt_text)
-
-#     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-#     antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
-
-       
-#     answer_path = out_dir / f"antwort_{eintrag['id']}.txt"
-#     answer_path.write_text(antwort_text, encoding="utf-8")
-
-#     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 eingaben = [
     "korrekt",
     "teilweise inkorrekt",
     "inkorrekt"
-]  
-# #Beispiel für STRATEGIEA   
- 
-# for eintrag in data: 
-#     prompt_type = PromptType.STRATEGIEA
-#     task_type = TaskType[eintrag["task_type"]]
-#     aufgabe = eintrag["aufgabenstellung"]
-#     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+]
 
+# Beispielantworten erstellen
+# for eintrag in daten:
+#     prompt_typ = PromptTyp.BEISPIELANTWORTEN
+#     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     musterloesung = eintrag["musterloesung"]
+#
+#     prompt_text = promptErsteller.erstelle_prompt(prompt_typ, aufgaben_typ, aufgabe, musterloesung, None, None)
+#
+#     prompt_pfad = ausgabe_ordner / f"prompt_{eintrag['id']}.txt"
+#     prompt_pfad.write_text(prompt_text, encoding="utf-8")
+#
+#     antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
+#
+#     zeitstempel = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+#     antwort_text = f"[Antwort generiert am {zeitstempel}]\n\n{antwort_text}"
+#
+#     antwort_pfad = ausgabe_ordner / f"antwort_{eintrag['id']}.txt"
+#     antwort_pfad.write_text(antwort_text, encoding="utf-8")
+#
+#     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {antwort_pfad.name}")
+
+# Beispiel für STRATEGIE A   
+# for eintrag in daten: 
+#     prompt_typ = PromptTyp.STRATEGIEA
+#     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     zeitstempel = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+#
 #     for eingabe in eingaben:
 #         # Studentische Antwort auswählen
-#         studentische_antwort = promptBuilder.choose_studentanswer(
+#         studentenantwort = promptErsteller.waehle_studentenantwort(
 #             f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
 #             eingabe, 
 #             1
 #         )
-
+#
 #         # Prompt bauen
-#         prompt_text = promptBuilder.build_prompt(
-#             prompt_type,
-#             task_type,
+#         prompt_text = promptErsteller.erstelle_prompt(
+#             prompt_typ,
+#             aufgaben_typ,
 #             aufgabe,
 #             None,
 #             None,
-#             studentische_antwort
+#             studentenantwort
 #         )
-
+#
 #         # Antwort generieren
-#         antwort_text = promptBuilder.call_model_responses(prompt_text)
-#         antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
-
+#         antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
+#         antwort_text = f"[Antwort generiert am {zeitstempel}]\n\n{antwort_text}"
+#
 #         # Dateien speichern
-#         answer_path = out_dir_A / f"antwort_{eintrag['id']}_{eingabe}.txt"
-#         prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}_{eingabe}.txt"
+#         antwort_pfad = ordner_A / f"antwort_{eintrag['id']}_{eingabe}.txt"
+#         prompt_pfad = ordner_A / f"prompt_strategieA_{eintrag['id']}_{eingabe}.txt"
+#
+#         antwort_pfad.write_text(antwort_text, encoding="utf-8")
+#         prompt_pfad.write_text(prompt_text, encoding="utf-8")
+#
+#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-#         answer_path.write_text(antwort_text, encoding="utf-8")
-#         prompt_path.write_text(prompt_text, encoding="utf-8")
-
-#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {answer_path.name}")
-
-# #Beispiel für STRATEGIEB
-# for eintrag in data:
-#     prompt_type = PromptType.STRATEGIEB
-#     task_type = TaskType[eintrag["task_type"]]
+# Beispiel für STRATEGIE B
+# for eintrag in daten:
+#     prompt_typ = PromptTyp.STRATEGIEB
+#     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
 #     aufgabe = eintrag["aufgabenstellung"]
-#     # Few Shot Beispiele
-#     musterlsg = eintrag["musterloesung"]
-#     teilweiseInkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
-#     inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
-#     fewShotBeispiele = "Musterlösung: " + musterlsg + "\n\nTeilweise inkorrekte Antwort: " + teilweiseInkorrekt + "\n\nInkorrekte Antwort: " + inkorrekt    
-#     # Studentische Antwort einfügen 
+#
+#     # Few-Shot-Beispiele vorbereiten
+#     musterloesung = eintrag["musterloesung"]
+#     teilweise_inkorrekt = promptErsteller.waehle_studentenantwort(
+#         f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2
+#     )
+#     inkorrekt = promptErsteller.waehle_studentenantwort(
+#         f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2
+#     )
+#     few_shot_beispiele = (
+#         "Musterlösung: " + musterloesung
+#         + "\n\nTeilweise inkorrekte Antwort: " + teilweise_inkorrekt
+#         + "\n\nInkorrekte Antwort: " + inkorrekt
+#     )
+#
+#     # Studentische Antworten einfügen 
 #     for eingabe in eingaben:
-#         # Studentische Antwort auswählen
-#         studentische_antwort = promptBuilder.choose_studentanswer(
+#         studentenantwort = promptErsteller.waehle_studentenantwort(
 #             f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
 #             eingabe, 
 #             1
 #         )
+#
 #         # Prompt bauen
-#         prompt_text = promptBuilder.build_prompt(
-#             prompt_type,
-#             task_type,
+#         prompt_text = promptErsteller.erstelle_prompt(
+#             prompt_typ,
+#             aufgaben_typ,
 #             aufgabe,
-#             musterlsg,
-#             fewShotBeispiele,
-#             studentische_antwort)
+#             musterloesung,
+#             few_shot_beispiele,
+#             studentenantwort
+#         )
+#
+#         prompt_pfad = ordner_B / f"prompt_strategieB_{eintrag['id']}_{eingabe}.txt"
+#         prompt_pfad.write_text(prompt_text, encoding="utf-8")
+#
+#         antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
+#
+#         antwort_pfad = ordner_B / f"antwort_strategieB_{eintrag['id']}_{eingabe}.txt"
+#         antwort_pfad.write_text(antwort_text, encoding="utf-8")
+#
+#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-#         prompt_path = out_dir_B / f"prompt_strategieB_{eintrag['id']}_{eingabe}.txt"
-#         prompt_path.write_text(prompt_text, encoding="utf-8")
-
-#         antwort_text = promptBuilder.call_model_responses(prompt_text)
-
-#         answer_path = out_dir_B/ f"antwort_strategieB_{eintrag['id']}_{eingabe}.txt"
-#         answer_path.write_text(antwort_text, encoding="utf-8")
-
-#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {answer_path.name}")
-
-
-#Beispiel für STRATEGIEC
-for eintrag in data:    
-    prompt_type = PromptType.STRATEGIEC
-    task_type = TaskType[eintrag["task_type"]]
+# Beispiel für STRATEGIE C
+for eintrag in daten:    
+    prompt_typ = PromptTyp.STRATEGIEC
+    aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
     aufgabe = eintrag["aufgabenstellung"]
-    # Few Shot Beispiele
-    musterlsg = eintrag["musterloesung"]
-    teilweiseInkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2)
-    inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2)
-    fewShotBeispiele = "Musterlösung: " + musterlsg + "\n\nTeilweise inkorrekte Antwort: " + teilweiseInkorrekt + "\n\nInkorrekte Antwort: " + inkorrekt    
-    # Studentische Antwort einfügen
+
+    # Few-Shot-Beispiele vorbereiten
+    musterloesung = eintrag["musterloesung"]
+    teilweise_inkorrekt = promptErsteller.waehle_studentenantwort(
+        f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "teilweise inkorrekt", 2
+    )
+    inkorrekt = promptErsteller.waehle_studentenantwort(
+        f"prompts_und_antworten/antwort_{eintrag['id']}.txt", "inkorrekt", 2
+    )
+    few_shot_beispiele = (
+        "Musterlösung: " + musterloesung
+        + "\n\nTeilweise inkorrekte Antwort: " + teilweise_inkorrekt
+        + "\n\nInkorrekte Antwort: " + inkorrekt
+    )
+
+    # Studentische Antworten einfügen
     for eingabe in eingaben:
-        # Studentische Antwort auswählen
-        studentische_antwort = promptBuilder.choose_studentanswer(
+        studentenantwort = promptErsteller.waehle_studentenantwort(
             f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
             eingabe, 
             1
         )
+
         # Prompt bauen
-        prompt_text = promptBuilder.build_prompt(
-            prompt_type,
-            task_type,
+        prompt_text = promptErsteller.erstelle_prompt(
+            prompt_typ,
+            aufgaben_typ,
             aufgabe,
-            musterlsg,
-            fewShotBeispiele,
-            studentische_antwort)
+            musterloesung,
+            few_shot_beispiele,
+            studentenantwort
+        )
 
-        prompt_path = out_dir_C / f"prompt_strategieC_{eintrag['id']}_{eingabe}.txt"
-        prompt_path.write_text(prompt_text, encoding="utf-8")
+        prompt_pfad = ordner_C / f"prompt_strategieC_{eintrag['id']}_{eingabe}.txt"
+        prompt_pfad.write_text(prompt_text, encoding="utf-8")
 
-        antwort_text = promptBuilder.call_model_responses(prompt_text)
+        antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
 
-        answer_path = out_dir_C/ f"antwort_strategieC_{eintrag['id']}_{eingabe}.txt"
-        answer_path.write_text(antwort_text, encoding="utf-8")
+        antwort_pfad = ordner_C / f"antwort_strategieC_{eintrag['id']}_{eingabe}.txt"
+        antwort_pfad.write_text(antwort_text, encoding="utf-8")
 
-        print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {answer_path.name}")
-   
+        print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-#Auswertung der Antworten
-evaluator = Evaluation()
+# Auswertung der Antworten
+auswerter = Evaluation()
 
-# A
-# darstellung = evaluator.collect_answers_table("strategie_A", "Strategie A", None)
+# Strategie A
+# darstellung = auswerter.erstelle_auswertung("strategie_A", "Strategie A", None)
 # print(darstellung)
 
-
-# B
-# darstellung = evaluator.collect_answers_table("strategie_B", "Strategie B", None)
+# Strategie B
+# darstellung = auswerter.erstelle_auswertung("strategie_B", "Strategie B", None)
 # print(darstellung)
 
-# C
-darstellung = evaluator.collect_answers_table("strategie_C", "Strategie C", None)
+# Strategie C
+darstellung = auswerter.erstelle_auswertung("strategie_C", "Strategie C", None)
 print(darstellung)
+

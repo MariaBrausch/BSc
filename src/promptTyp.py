@@ -1,5 +1,5 @@
 from enum import Enum
-class PromptType(Enum):
+class PromptTyp(Enum):
     BEISPIELANTWORTEN = "BEISPIELANTWORTEN"
     STRATEGIEA = "STRATEGIEA"
     STRATEGIEB = "STRATEGIEB" 

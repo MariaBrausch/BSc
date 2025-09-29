@@ -1,7 +1,7 @@
 from enum import Enum
 from textwrap import dedent
 
-class Instructions(Enum):
+class Anweisungen(Enum):
     BEISPIELANTWORTEN = """
     Erstelle zu der folgenden Aufgabenstellung des Fachbereichs Kommunikation- und Rechnernetzwerke studentische Beispielantworten in den vorgegebenen Bewertungskategorien.
     Orientiere dich dabei an der angegebenen Musterlösung (Ground Truth) und den definierten Bewertungskriterien. 
