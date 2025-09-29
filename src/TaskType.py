@@ -24,9 +24,6 @@ task_criteria = {
     ],
     TaskType.RECHENAUFGABE: [
         "Richtiges Ergebnis", "korrekter Rechenweg", "Einheiten"
-    ],
-    TaskType.FACHBEGRIFF: [
-        "Korrektheit", "Schreibweise"
     ]
 }
 
@@ -35,8 +32,7 @@ task_categories = {
     TaskType.ZUORDNUNG: ["korrekt", "teilweise inkorrekt", "inkorrekt"],
     TaskType.FORMEL_ZAHL: ["korrekt", "inkorrekt"],
     TaskType.BEISPIELE: ["korrekt", "teilweise inkorrekt", "inkorrekt"],
-    TaskType.RECHENAUFGABE: ["korrekt", "teilweise inkorrekt", "inkorrekt"],
-    TaskType.FACHBEGRIFF: ["korrekt", "inkorrekt"]  
+    TaskType.RECHENAUFGABE: ["korrekt", "teilweise inkorrekt", "inkorrekt"]
 }
 
 task_rubrics = {
@@ -59,9 +55,6 @@ task_rubrics = {
     TaskType.RECHENAUFGABE: ["Korrekt: Das Ergebnis ist richtig, der Rechenweg ist vollständig und korrekt dargestellt, und die Einheiten sind korrekt angegeben.",
                              "Teilweise inkorrekt: Das Ergebnis ist teilweise richtig, der Rechenweg enthält kleinere Fehler oder Auslassungen, oder die Einheiten sind teilweise falsch.",     
                              "Inkorrekt: Das Ergebnis ist falsch, der Rechenweg ist fehlerhaft oder unvollständig, und die Einheiten sind größtenteils falsch."
-                            ],
-    TaskType.FACHBEGRIFF: ["Korrekt: Der Fachbegriff ist richtig geschrieben und korrekt verwendet.",
-                           "Inkorrekt: Der Fachbegriff ist falsch geschrieben oder wurde nicht korrekt verwendet."      
                             ]
 
 

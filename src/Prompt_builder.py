@@ -1,15 +1,17 @@
 from textwrap import dedent
 import json
 from pathlib import Path
-from PromptType import PromptType
+from promptType import PromptType
 from Instructions import Instructions
-from TaskType import TaskType
-from TaskType import task_criteria, task_categories, task_rubrics
+from taskType import TaskType
+from taskType import task_criteria, task_categories, task_rubrics
 from openai import OpenAI
 from datetime import datetime
 
 
 class PromptBuilder:
+    """Klasse zum Erstellen von Prompts basierend auf verschiedenen Typen und Parametern.
+    """
 
     def __init__(self):
         pass
@@ -96,6 +98,13 @@ Studentische Antwort:
             raise ValueError("Unbekannter Prompt-Typ")
         
     def call_model_responses(self, prompt_text: str, model: str = "gpt-4o") -> str:
+        """
+        Ruft das OpenAI-Modell auf und gibt die Antwort zurück.
+
+        :param prompt_text: Der zu sendende Prompt
+        :param model: Das zu verwendende Modell (gpt-4o)
+        :return: Die Antwort des Modells als String
+        """
         client = OpenAI()
         resp = client.responses.create(
             model=model,
@@ -104,6 +113,14 @@ Studentische Antwort:
         return resp.output_text 
 
     def choose_studentanswer(self, pfad: str, kategorie: str, nummer: int) -> str:
+        """
+        Wählt eine studentische Antwort aus einer Datei basierend auf der Kategorie und der Nummer aus.
+       
+        :param pfad: Der Pfad zur Datei mit den Antworten
+        :param kategorie: Die Kategorie der Antwort (z. B. "korrekt", "teilweise inkorrekt", "inkorrekt")   
+        :param nummer: Die Nummer der Antwort in der Kategorie (1 oder 2)
+        :return: Die ausgewählte studentische Antwort als String
+        """
         antwort_lines = []
         try:
             print(f"Öffne Datei: {pfad}")
@@ -116,23 +133,19 @@ Studentische Antwort:
             for line in lines:
                 line_stripped = line.strip()
 
-                # Kategorie erkannt (unabhängig von Groß-/Kleinschreibung)
                 if line_stripped.lower().startswith("### bewertungskategorie:") and kategorie.lower() in line_stripped.lower():
                     print(f"Kategorie gefunden: {kategorie}")
                     inside_category = True
                     continue
 
-                # Falls neue Kategorie kommt -> rausgehen
                 if line_stripped.lower().startswith("### bewertungskategorie:") and inside_category:
                     break
 
-                # Antwort erkannt (unabhängig von Groß-/Kleinschreibung)
                 if inside_category and line_stripped.lower().startswith(f"**antwort {nummer}**".lower()):
                     print(f"Antwort {nummer} gefunden in Kategorie {kategorie}")
                     inside_answer = True
                     continue
 
-                # Text sammeln, solange wir in der richtigen Antwort sind
                 if inside_answer:
                     if line_stripped.lower().startswith("**antwort") or line_stripped.lower().startswith("### bewertungskategorie:"):
                         break

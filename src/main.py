@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
-from PromptType import PromptType
-from TaskType import TaskType
+from promptType import PromptType
+from taskType import TaskType
 from datetime import datetime
 from prompt_builder import PromptBuilder
 from evaluation import Evaluation

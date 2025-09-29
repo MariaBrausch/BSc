@@ -55,8 +55,8 @@ class Evaluation:
             unknown_output_files = []
 
             for datei in Path(ordner).glob("antwort*.txt"):
-                input = self.input_category(datei.name)   # EINGABE aus Dateiname
-                output = self.classify_answer(datei)             # AUSGABE aus Inhalt
+                input = self.input_category(datei.name)  
+                output = self.classify_answer(datei)         
 
                 if input not in matrix:
                     unknown_input_files.append(str(datei))
