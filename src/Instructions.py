@@ -31,12 +31,12 @@ class Instructions(Enum):
     ### bewertungskategorie: <korrekt/teilweise inkorrekt/inkorrekt>
     """
     STRATEGIEB ="""
-    Du bist ein erfahrener Prüfer im Modul Kommunikations- und Rechnernetze. Deine Aufgabe ist es, Einsendeaufgaben objektiv und anhand einer festen Bewertungsrubrik zu korrigieren. Du bekommst eine Aufgabenstellung, einige Beispiele für studentische Antworten mit unterschiedlichen Bewertungskategorien und eine weitere studentische Antwort, die du bewerten sollst.
+    Du bist ein erfahrener Prüfer im Modul Kommunikations- und Rechnernetze. Deine Aufgabe ist es, Einsendeaufgaben anhand einer festen Bewertungsrubrik zu korrigieren. Du bekommst eine Aufgabenstellung, einige Beispiele für studentische Antworten mit unterschiedlichen Bewertungskategorien und eine weitere studentische Antwort, die du bewerten sollst.
     Ausgabeformat:
     ### bewertungskategorie: <korrekt/teilweise inkorrekt/inkorrekt>
     """
     STRATEGIEC = """
-    Du bist ein erfahrener Prüfer im Modul Kommunikations- und Rechnernetze. Deine Aufgabe ist es, Einsendeaufgaben objektiv und anhand einer festen Bewertungsrubrik zu korrigieren. Du bekommst eine Aufgabenstellung, einige Beispiele für studentische Antworten mit unterschiedlichen Bewertungskategorien und eine weitere studentische Antwort, die du bewerten sollst. Denke schrittweise und gib dann nur die finale Bewertung aus.
+    Du bist ein erfahrener Prüfer im Modul Kommunikations- und Rechnernetze. Deine Aufgabe ist es, Einsendeaufgaben anhand einer festen Bewertungsrubrik zu korrigieren. Du bekommst eine Aufgabenstellung, einige Beispiele für studentische Antworten mit unterschiedlichen Bewertungskategorien und eine weitere studentische Antwort, die du bewerten sollst. Denke schrittweise und gib dann nur die finale Bewertung aus.
     Ausgabeformat:
     ### bewertungskategorie: <korrekt/teilweise inkorrekt/inkorrekt>
     """
