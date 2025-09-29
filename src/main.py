@@ -50,67 +50,49 @@ out_dir_C.mkdir(exist_ok=True)
 
 #     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
 
-# #Beispiel für STRATEGIEA      
+# #Beispiel für STRATEGIEA   
+eingaben = [
+    "korrekt",
+    "teilweise inkorrekt",
+    "inkorrekt"
+]   
 for eintrag in data: 
     prompt_type = PromptType.STRATEGIEA
     task_type = TaskType[eintrag["task_type"]]
     aufgabe = eintrag["aufgabenstellung"]
-
-    eingabe_korrekt = "korrekt"
-    eingabe_teilweise = "teilweise inkorrekt"
-    eingabe_inkorrekt = "inkorrekt"
-
-    studentischeantwort_korrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", eingabe_korrekt, 1)
-    prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort_korrekt)
-
-    antwort_text = promptBuilder.call_model_responses(prompt_text)
-
     timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
 
-       
-    answer_path = out_dir_A / f"antwort_{eintrag['id']}_{eingabe_korrekt}.txt"
-    answer_path.write_text(antwort_text, encoding="utf-8")
+    for eingabe in eingaben:
+        # Studentische Antwort auswählen
+        studentische_antwort = promptBuilder.choose_studentanswer(
+            f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
+            eingabe, 
+            1
+        )
 
-    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
+        # Prompt bauen
+        prompt_text = promptBuilder.build_prompt(
+            prompt_type,
+            task_type,
+            aufgabe,
+            None,
+            None,
+            studentische_antwort
+        )
 
-    prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}_{eingabe_korrekt}.txt"
-    prompt_path.write_text(prompt_text, encoding="utf-8")
+        # Antwort generieren
+        antwort_text = promptBuilder.call_model_responses(prompt_text)
+        antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
 
-    studentischeantwort_teilweise_inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", eingabe_teilweise, 1)
-    prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort_teilweise_inkorrekt)
+        # Dateien speichern
+        answer_path = out_dir_A / f"antwort_{eintrag['id']}_{eingabe}.txt"
+        prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}_{eingabe}.txt"
 
-    antwort_text = promptBuilder.call_model_responses(prompt_text)
+        answer_path.write_text(antwort_text, encoding="utf-8")
+        prompt_path.write_text(prompt_text, encoding="utf-8")
 
-    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
-
-       
-    answer_path = out_dir_A / f"antwort_{eintrag['id']}_{eingabe_teilweise}.txt"
-    answer_path.write_text(antwort_text, encoding="utf-8")
-
-    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
-
-    prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}_{eingabe_teilweise}.txt"
-    prompt_path.write_text(prompt_text, encoding="utf-8")
-
-    studentischeantwort_inkorrekt = promptBuilder.choose_studentanswer(f"prompts_und_antworten/antwort_{eintrag['id']}.txt", eingabe_inkorrekt, 1)
-    prompt_text = promptBuilder.build_prompt(prompt_type,task_type,aufgabe,None,None,studentischeantwort_inkorrekt)
-
-    antwort_text = promptBuilder.call_model_responses(prompt_text)
-
-    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-    antwort_text = f"[Antwort generiert am {timestamp}]\n\n{antwort_text}"
-
-       
-    answer_path = out_dir_A / f"antwort_{eintrag['id']}_{eingabe_inkorrekt}.txt"
-    answer_path.write_text(antwort_text, encoding="utf-8")
-
-    print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {answer_path.name}")
-
-    prompt_path = out_dir_A / f"prompt_strategieA_{eintrag['id']}_{eingabe_inkorrekt}.txt"
-    prompt_path.write_text(prompt_text, encoding="utf-8")
-
+        print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {answer_path.name}")
+        
 # #Beispiel für STRATEGIEB
 # for eintrag in data:
 #     prompt_type = PromptType.STRATEGIEB
