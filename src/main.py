@@ -54,45 +54,45 @@ eingaben = [
 #
 #     print(f"Prompt {eintrag['id']} erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-# Beispiel für STRATEGIE A   
-for eintrag in daten: 
-    prompt_typ = PromptTyp.STRATEGIEA
-    aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
-    aufgabe = eintrag["aufgabenstellung"]
-    zeitstempel = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
+# # Beispiel für STRATEGIE A   
+# for eintrag in daten: 
+#     prompt_typ = PromptTyp.STRATEGIEA
+#     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
+#     aufgabe = eintrag["aufgabenstellung"]
+#     zeitstempel = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
-    for eingabe in eingaben:
-        # Studentische Antwort auswählen
-        studentenantwort = promptErsteller.waehle_studentenantwort(
-            f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
-            eingabe, 
-            1
-        )
+#     for eingabe in eingaben:
+#         # Studentische Antwort auswählen
+#         studentenantwort = promptErsteller.waehle_studentenantwort(
+#             f"prompts_und_antworten/antwort_{eintrag['id']}.txt", 
+#             eingabe, 
+#             1
+#         )
 
-        # Prompt bauen
-        prompt_text = promptErsteller.erstelle_prompt(
-            prompt_typ,
-            aufgaben_typ,
-            aufgabe,
-            None,
-            None,
-            studentenantwort
-        )
+#         # Prompt bauen
+#         prompt_text = promptErsteller.erstelle_prompt(
+#             prompt_typ,
+#             aufgaben_typ,
+#             aufgabe,
+#             None,
+#             None,
+#             studentenantwort
+#         )
 
-        # Antwort generieren
-        antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
-        antwort_text = f"[Antwort generiert am {zeitstempel}]\n\n{antwort_text}"
+#         # Antwort generieren
+#         antwort_text = promptErsteller.rufe_modellantworten_ab(prompt_text)
+#         antwort_text = f"[Antwort generiert am {zeitstempel}]\n\n{antwort_text}"
 
-        # Dateien speichern
-        antwort_pfad = ordner_A / f"antwort_{eintrag['id']}_{eingabe}.txt"
-        prompt_pfad = ordner_A / f"prompt_strategieA_{eintrag['id']}_{eingabe}.txt"
+#         # Dateien speichern
+#         antwort_pfad = ordner_A / f"antwort_{eintrag['id']}_{eingabe}.txt"
+#         prompt_pfad = ordner_A / f"prompt_strategieA_{eintrag['id']}_{eingabe}.txt"
 
-        antwort_pfad.write_text(antwort_text, encoding="utf-8")
-        prompt_pfad.write_text(prompt_text, encoding="utf-8")
+#         antwort_pfad.write_text(antwort_text, encoding="utf-8")
+#         prompt_pfad.write_text(prompt_text, encoding="utf-8")
 
-        print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
+#         #print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-# Beispiel für STRATEGIE B
+# # Beispiel für STRATEGIE B
 # for eintrag in daten:
 #     prompt_typ = PromptTyp.STRATEGIEB
 #     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
@@ -138,9 +138,9 @@ for eintrag in daten:
 #         antwort_pfad = ordner_B / f"antwort_strategieB_{eintrag['id']}_{eingabe}.txt"
 #         antwort_pfad.write_text(antwort_text, encoding="utf-8")
 
-#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
+#         #print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
-# Beispiel für STRATEGIE C
+# # Beispiel für STRATEGIE C
 # for eintrag in daten:    
 #     prompt_typ = PromptTyp.STRATEGIEC
 #     aufgaben_typ = AufgabenTyp[eintrag["task_type"]]
@@ -186,20 +186,20 @@ for eintrag in daten:
 #         antwort_pfad = ordner_C / f"antwort_strategieC_{eintrag['id']}_{eingabe}.txt"
 #         antwort_pfad.write_text(antwort_text, encoding="utf-8")
 
-#         print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
+#         #print(f"Prompt {eintrag['id']} ({eingabe}) erstellt und Antwort gespeichert -> {antwort_pfad.name}")
 
 # Auswertung der Antworten
 auswerter = Evaluation()
 
 # Strategie A
-# darstellung = auswerter.erstelle_auswertung("strategie_A", "Strategie A", None)
-# print(darstellung)
+darstellung = auswerter.erstelle_auswertung("strategie_A", "Strategie A", None)
+print(darstellung)
 
 # Strategie B
-# darstellung = auswerter.erstelle_auswertung("strategie_B", "Strategie B", None)
-# print(darstellung)
+darstellung = auswerter.erstelle_auswertung("strategie_B", "Strategie B", None)
+print(darstellung)
 
 # Strategie C
-# darstellung = auswerter.erstelle_auswertung("strategie_C", "Strategie C", None)
-# print(darstellung)
+darstellung = auswerter.erstelle_auswertung("strategie_C", "Strategie C", None)
+print(darstellung)
 

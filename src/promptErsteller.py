@@ -43,7 +43,7 @@ class PromptErsteller:
         kategorien = kategorien_pro_aufgabe.get(aufgaben_typ, [])
         kategorien_str = ", ".join(kategorien)
 
-        print(f"Debug: Eingehender prompt_typ = {prompt_typ}")
+        #print(f"Debug: Eingehender prompt_typ = {prompt_typ}")
 
         if prompt_typ == PromptTyp.BEISPIELANTWORTEN:
             return dedent(f"""
@@ -118,61 +118,61 @@ Studentische Antwort:
         )
         return resp.output_text
 
-def waehle_studentenantwort(self, pfad: str, kategorie: str, nummer: int) -> str:
-    """
-    Wählt eine studentische Antwort aus einer Datei basierend auf der Kategorie und der Nummer aus.
+    def waehle_studentenantwort(self, pfad: str, kategorie: str, nummer: int) -> str:
+        """
+        Wählt eine studentische Antwort aus einer Datei basierend auf der Kategorie und der Nummer aus.
 
-    :param pfad: Der Pfad zur Datei mit den Antworten
-    :param kategorie: Die Kategorie der Antwort (z. B. "korrekt", "teilweise inkorrekt", "inkorrekt")
-    :param nummer: Die Nummer der Antwort in der Kategorie (1 oder 2)
-    :return: Die ausgewählte studentische Antwort als String
-    """
-    antwort_zeilen = []
-    try:
-        print(f"Öffne Datei: {pfad}")
-        with open(pfad, "r", encoding="utf-8") as f:
-            zeilen = f.readlines()
+        :param pfad: Der Pfad zur Datei mit den Antworten
+        :param kategorie: Die Kategorie der Antwort (z. B. "korrekt", "teilweise inkorrekt", "inkorrekt")
+        :param nummer: Die Nummer der Antwort in der Kategorie (1 oder 2)
+        :return: Die ausgewählte studentische Antwort als String
+        """
+        antwort_zeilen = []
+        try:
+            print(f"Öffne Datei: {pfad}")
+            with open(pfad, "r", encoding="utf-8") as f:
+                zeilen = f.readlines()
 
-        in_kategorie = False
-        in_antwort = False
+            in_kategorie = False
+            in_antwort = False
 
-        for zeile in zeilen:
-            zeile_clean = zeile.strip().lower()
+            for zeile in zeilen:
+                zeile_clean = zeile.strip().lower()
 
-            # Kategorie exakt prüfen
-            if zeile_clean.startswith("### bewertungskategorie:"):
-                aktuelle_kategorie = zeile_clean.replace("### bewertungskategorie:", "").strip()
-                if aktuelle_kategorie == kategorie.lower():
-                    print(f"Kategorie gefunden: {kategorie}")
-                    in_kategorie = True
+                # Kategorie exakt prüfen
+                if zeile_clean.startswith("### bewertungskategorie:"):
+                    aktuelle_kategorie = zeile_clean.replace("### bewertungskategorie:", "").strip()
+                    if aktuelle_kategorie == kategorie.lower():
+                        #print(f"Kategorie gefunden: {kategorie}")
+                        in_kategorie = True
+                        continue
+                    elif in_kategorie:  # neue Kategorie beginnt → abbrechen
+                        break
+
+                # Antwortnummer innerhalb der Kategorie prüfen
+                if in_kategorie and zeile_clean.startswith(f"**antwort {nummer}**".lower()):
+                    #print(f"Antwort {nummer} gefunden in Kategorie {kategorie}")
+                    in_antwort = True
                     continue
-                elif in_kategorie:  # neue Kategorie beginnt → abbrechen
-                    break
 
-            # Antwortnummer innerhalb der Kategorie prüfen
-            if in_kategorie and zeile_clean.startswith(f"**antwort {nummer}**".lower()):
-                print(f"Antwort {nummer} gefunden in Kategorie {kategorie}")
-                in_antwort = True
-                continue
+                # Antworttext sammeln, bis nächste Antwort oder Kategorie beginnt
+                if in_antwort:
+                    if zeile_clean.startswith("**antwort") or zeile_clean.startswith("### bewertungskategorie:"):
+                        break
+                    antwort_zeilen.append(zeile.strip())
 
-            # Antworttext sammeln, bis nächste Antwort oder Kategorie beginnt
-            if in_antwort:
-                if zeile_clean.startswith("**antwort") or zeile_clean.startswith("### bewertungskategorie:"):
-                    break
-                antwort_zeilen.append(zeile.strip())
+            if not antwort_zeilen:
+                print(f"Keine Antwort gefunden für Kategorie: {kategorie}, Nummer: {nummer}")
+                return "Keine Antwort gefunden."
 
-        if not antwort_zeilen:
-            print(f"Keine Antwort gefunden für Kategorie: {kategorie}, Nummer: {nummer}")
-            return "Keine Antwort gefunden."
+            return " ".join(antwort_zeilen).strip()
 
-        return " ".join(antwort_zeilen).strip()
-
-    except FileNotFoundError:
-        print(f"Datei nicht gefunden: {pfad}")
-        return "Datei nicht gefunden."
-    except Exception as e:
-        print(f"Ein Fehler ist aufgetreten: {e}")
-        return "Ein Fehler ist aufgetreten."
+        except FileNotFoundError:
+            print(f"Datei nicht gefunden: {pfad}")
+            return "Datei nicht gefunden."
+        except Exception as e:
+            print(f"Ein Fehler ist aufgetreten: {e}")
+            return "Ein Fehler ist aufgetreten."
 
 
 
