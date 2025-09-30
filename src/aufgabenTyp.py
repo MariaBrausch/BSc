@@ -37,7 +37,7 @@ kategorien_pro_aufgabe = {
 
 rubriken_pro_aufgabe = {
     AufgabenTyp.FREITEXT: ["Korrekt: Die Antwort ist inhaltlich richtig, vollständig, gut strukturiert und nachvollziehbar.",
-                        "Teilweise inkorrekt: Die Antwort enthält kleinere Fehler oder Auslassungen, ist aberüberwiegend korrekt. Struktur und Nachvollziehbarkeit sind teilweise gegeben.",
+                        "Teilweise inkorrekt: Die Antwort enthält kleinere Fehler oder Auslassungen, ist aber überwiegend korrekt. Struktur und Nachvollziehbarkeit sind teilweise gegeben.",
                         "Inkorrekt: Die Antwort enthält gravierende inhaltliche Fehler oder lässt zentrale Punkte aus. Struktur und Nachvollziehbarkeit sind stark beeinträchtigt."
                         ],
     AufgabenTyp.ZUORDNUNG: ["Korrekt: Alle Zuordnungen sind vollständig und fehlerfrei richtig vorgenommen.",
