@@ -1,3 +1,8 @@
 [
-
+  { 
+    "id": "ea1-parallelität-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Amdahls Gesetz?",
+    "musterloesung": "Das Gesetz berücksichtigt nicht, dass weitere beschleunigende Elemente wie bspw. Caches existieren, die den Speedup weiter erhöhen können. Weiterhin geht Amdahl von einer festenProblemgröße aus, d.h. er nimmt an, dass \"nur\" ein festes Problem innerhalb kürzester Zeit zulösen ist. Dass durch die Parallelisierung ggf. komplexere Probleme lösbar werden,berücksichtigt er nicht."
+  }
 ]
