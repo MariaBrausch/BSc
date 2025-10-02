@@ -62,6 +62,12 @@ for eintrag in daten:
     aufgabe = eintrag["aufgabenstellung"]
     zeitstempel = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
+    if aufgaben_typ == AufgabenTyp.FORMEL_ZAHL:
+        eingaben = [
+        "korrekt",
+        "inkorrekt"
+        ]
+
     for eingabe in eingaben:
         # Studentische Antwort auswählen
         studentenantwort = promptErsteller.waehle_studentenantwort(
@@ -113,6 +119,11 @@ for eintrag in daten:
         + "\n\nTeilweise inkorrekte Antwort: " + teilweise_inkorrekt
         + "\n\nInkorrekte Antwort: " + inkorrekt
     )
+    if aufgaben_typ == AufgabenTyp.FORMEL_ZAHL:
+        eingaben = [
+        "korrekt",
+        "inkorrekt"
+        ]
 
     # Studentische Antworten einfügen 
     for eingabe in eingaben:
@@ -163,7 +174,11 @@ for eintrag in daten:
         + "\n\nTeilweise inkorrekte Antwort: " + teilweise_inkorrekt
         + "\n\nInkorrekte Antwort: " + inkorrekt
     )
-
+    if aufgaben_typ == AufgabenTyp.FORMEL_ZAHL:
+        eingaben = [
+        "korrekt",
+        "inkorrekt"
+        ]
     # Studentische Antworten einfügen
     for eingabe in eingaben:
         studentenantwort = promptErsteller.waehle_studentenantwort(
