@@ -129,7 +129,7 @@ Studentische Antwort:
         """
         antwort_zeilen = []
         try:
-            print(f"Öffne Datei: {pfad}")
+            #print(f"Öffne Datei: {pfad}")
             with open(pfad, "r", encoding="utf-8") as f:
                 zeilen = f.readlines()
 

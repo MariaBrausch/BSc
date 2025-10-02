@@ -1,0 +1,26 @@
+[
+{
+    "id": "ea1-parallelität-a-1",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Wie lautet Amdahls Gesetz in der ausführlichsten Fassung (formale Darstellung)?",
+    "musterloesung":"$$ S = \\frac{1}{(1 - P) + o(N) + \\frac{P}{N}}\\leq\\frac{1}{1-P} \\; $$"
+  },
+  {
+    "id": "ea3-Abtastung-1-1",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Gegeben sei eine periodische Schwingung der Frequenz f0 = 10 Hz. Die Schwingung wird beschrieben durch $$ f(x)=A \\cdot \\sin (2 \\pi f_0 t) $$ Diese Schwingung soll nun abgetastet werden.Wie groß muss die Abtastfrequenz fa mindestens sein, damit das Signal fehlerfrei aus den Abtastwerten wiederhergestellt werden kann?",
+    "musterloesung": "fa > 20 Hz"
+  },
+ {
+    "id": "ea4-crc-a",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Geben Sie zunächst das Informationspolynom I(x) in TeX-Notation (ohne Dollarzeichen) an.",
+    "musterloesung": "I(x) = 0·x^15 + 0·x^14 + 1·x^13 + 1·x^12 + 0·x^11 + 0·x^10 + 0·x^9 + 1·x^8 + 1·x^7 + 0·x^6 + 0·x^5 + 0·x^4 + 1·x^3 + 1·x^2 + 0·x^1 + 0·x^0 = x^13 + x^12 + x^8 + x^7 + x^3 + x^2"
+  },
+  {
+    "id": "ea4-crc-d",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Wie lautet der resultierende CRC Prüfwert (binär)?",
+    "musterloesung": "001100011000110011011"
+  }
+]
