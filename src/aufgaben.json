@@ -1,3 +1,315 @@
-[
- 
+[ 
+  {
+    "id": "ea1-gefangenendilemma-a",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Ein dem Gefangenendilemma ähnliches Problem ist das sogenannte Lift-Dilemma, das sich wie folgt beschreiben lässt: Zwei Nachbarn (A und B) hören gerne laut bei offenem Fenster Heavy Metal und können sich in ihrem Genuss gegenseitig stören. Folgende Kombinationen sind dabei denkbar:Kombination R: Keiner hört Musik : beide erhalten 3 Genusspunkte,Kombination S: B hört Musik, A nicht : B erhält 8 Genusspunkte, A keinen,Kombination T: A hört Musik, B nicht : A erhält 8 Genusspunkte, B keinen,Kombination P: Beide hören Musik : beide erhalten 1 Genusspunkt.Füllen Sie nachfolgende Entscheidungstabelle aus!",
+    "musterloesung":"A ist still, B ist still: R = (3,3) Gesamt: 6, A ist still, B hört Musik: S = (0,8) Gesamt: 8, A hört Musik, B ist still: T = (8,0) Gesamt: 8, A hört Musik, B hört Musik: P = (1,1) Gesamt: 2"
+  },
+  {
+    "id": "ea1-gefangenendilemma-b",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Ein dem Gefangenendilemma ähnliches Problem ist das sogenannte Lift-Dilemma, das sich wie folgt beschreiben lässt: Zwei Nachbarn (A und B) hören gerne laut bei offenem Fenster Heavy Metal und können sich in ihrem Genuss gegenseitig stören. Folgende Kombinationen sind dabei denkbar:Kombination R: Keiner hört Musik : beide erhalten 3 Genusspunkte,Kombination S: B hört Musik, A nicht : B erhält 8 Genusspunkte, A keinen,Kombination T: A hört Musik, B nicht : A erhält 8 Genusspunkte, B keinen,Kombination P: Beide hören Musik : beide erhalten 1 Genusspunkt. Welche Kooperationsstrategie bringt für A und B jeweils über mehrere Runden hinweg den maximalen Nutzen?",
+    "musterloesung":"1. Zug: A hört Musik, B ist still, 2. Zug: A ist still, B hört Musik, 3. Zug: A hört Musik, B ist still, 4. Zug: A ist still, B hört Musik, A erhält insgesamt 16 Genusspunkte, B erhält insgesamt 16 Genusspunkte"
+  },
+  {
+    "id": "ea1-parallelität-a-1",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Wie lautet Amdahls Gesetz in der ausführlichsten Fassung (formale Darstellung)?",
+    "musterloesung":"$$ S = \\frac{1}{(1 - P) + o(N) + \\frac{P}{N}}\\leq\\frac{1}{1-P} \\; $$"
+  },
+  {
+    "id": "ea1-parallelität-a-2",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie lautet Amdahls Gesetz in der ausführlichsten Fassung (formale Darstellung)? Erläutern Sie die Bedeutung der Variablen, die in der Formel benötigt werden:",
+    "musterloesung":"Variablenname: P, Bedeutung: Parallelisierbarer Anteil der Gesamtaufgabe. Variablenname: N, Bedeutung: Anzahl der zur Verfügung stehenden Prozessoren. Variablenname: o(N), Bedeutung: Zeitaufwand (Kosten), der durch Synchronisation u.ä. anfällt und demnach nicht für die Bearbeitung der Aufgabe zur Verfügung steht."
+  },
+  {
+    "id": "ea1-parallelität-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie die Aussage(n) von Amdahls Gesetz in eigenen Worten zusammen!",
+    "musterloesung": "Amdahls Gesetz besagt, dass der serielle Anteil eines Programms die durch Parallelisierung maximal erreichbare Beschleunigung begrenzt. Zwar steigt der Speedup mit dem Anteil parallelisierbarer Programmteile, jedoch wird selbst bei unendlich hoher Anzahl verfügbarer Prozessoren mindestens die Zeit benötigt, die der serielle Anteil erfordert. Da in der Praxis Parallelisierungskosten (durch Kommunikations- und Synchronisationsaufwand) entstehen, steigt ab einer gewissen Anzahl von Prozessoren der Zeitbedarf zur Bearbeitung der Aufgabe sogar wieder."
+  },
+  { 
+    "id": "ea1-parallelität-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Amdahls Gesetz?",
+    "musterloesung": "Das Gesetz berücksichtigt nicht, dass weitere beschleunigende Elemente wie bspw. Caches existieren, die den Speedup weiter erhöhen können. Weiterhin geht Amdahl von einer festenProblemgröße aus, d.h. er nimmt an, dass \"nur\" ein festes Problem innerhalb kürzester Zeit zulösen ist. Dass durch die Parallelisierung ggf. komplexere Probleme lösbar werden,berücksichtigt er nicht."
+  },
+  {
+    "id": "ea1-parallelität-e",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Fassen Sie nun die Aussage von Gustafsons Gesetz in eigenen Worten zusammen!",
+    "musterloesung": "Gustafson dreht im Vergleich zu Amdahl die Zeilsetzung um. Er stellt fest, dass mit wachsender Anzahl von Prozessoren immer größere Aufgaben bewältigt werden können, weil in einer fest vorgegebenen Zeitspanne der Parallelanteil im Verhältnis zum seriellen Anteil immer stärker dominiert. Analog zu Amdahl steigt auch hier der Speedup mit der Anzahl der Prozessoren und dem parallelisierbaren Anteil, ist aber nicht nach oben beschränkt."
+  },
+  {
+    "id": "ea1-parallelität-f",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Recherchieren Sie zur Vorbereitung auf diese Aufgabe zunächst Amdahls Gesetz und Gustafsons Gesetz! Beachten Sie dabei bitte, dass wir keine Copy & Paste-Lösungen akzeptieren. Welche Schwachstellen hat Gustafsons Gesetz?",
+    "musterloesung": "Nicht jedes Problem lässt sich beliebig vergrößern. Stattdessen müssen häufig Probleme in fest vorgegebenen zeitlichen Grenzen (sog. Echtzeitbedingunen) gelöst werden. Hier kann Gustafsons Gesetz nicht angewendet werden."
+  },
+  {
+    "id": "ea2-topologien",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Bestimmen Sie die Kennzahlen für folgende Topologien:  Quadratisches Gitter mit Knotenzahl n^2, Bus mit n Stationen, Ring mit n Stationen, Ring mit n Stationen und unidirektionalen Verweisen, Stern mit n Stationen, d-dimensionaler Hyperwürfel, Vollständig vermaschtes Netz mit n Stationen, Balancierte Baumstruktur vom Grad k und n Elementen.  Clusterkoeffizient und Durchmesser",
+    "musterloesung":"Quadratisches Gitter mit Knotenzahl n^2: Clusterkoeffizient: Kein Nachbar ist direkt mit einem anderen Nachbarn vernetzt. Der globale Clusterkoeffizient hat den Wert 0. Durchmesser: Abstand zweier gegenüberliegender Ecken (Manhattan-Metrik!): 2(n-1);Bus mit n Stationen: Clusterkoeffizient: Hier kann man streiten. • Betrachtet man den Bus als eigene Station (im Sinne einer technischen Einheit), ist kein Knoten direkt mit einem anderen verbunden, sondern jeder nur mit dem Bus. Dann erhält man dasselbe Ergebnis wie beim Stern, also 0. • Betrachtet man den Bus als multiple Kante zwischen allen Stationen, ist jeder mit jedem vernetzt, der Clusterkoeffizient ist also 1. Durchmesser: Es greift dieselbe Argumentation. • Betrachtet man den Bus als eigene Station, ist der maximale Abstand zwischen zwei Knoten n-1. • Betrachtet man den Bus als multiple Kante zwischen allen Stationen, ist jeder mit jedem vernetzt, der Durchmesser ist also 1.;Ring mit n Stationen: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Die größte Distanz tritt zwischen zwei gegenüberliegenden Knoten auf. Der Durchmesser beträgt n/2.;Ring mit n Stationen und unidirektionalen Verweisen: Clusterkoeffizient: Hier ändert sich nichts, der Clusterkoeffizient ist 0. Durchmesser: Es gibt nur noch eine Richtung durch den Graphen. Jeder Knoten hat zu dem Nachbarn, mit dem er nicht gerichtet verbunden ist, die Distanz von n-1.;Stern mit n Stationen: Clusterkoeffizient: * In der Sternstruktur haben nicht alle Knoten denselben lokalen Clusterkoeffizienten. Die Randknoten haben jeweils nur einen Nachbarn. Dieser hat d mögliche und 0 tatsächliche Verbindungen zu anderen Nachbarn, der lokale Clusterkoeffizient ist 0/0 und damit formal nicht bestimmt. • Versteht man den Clusterkoeffizienten als Maß für Transitivität, erhält man trotzdem für den lokalen Clusterkoeffizienten der Randknoten den Wert 0, sodass der globale Clusterkoeffizient den Wert 0 hat. Durchmesser: Um zwei Randknoten zu verbinden, muss stets durch den Zentrumsknoten vermittelt werden, der Durchmesser ist 2.;d-dimensionaler Hyperwürfel: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Per Definition des Hyperwürfels: In jeder Dimension ist nur ein Vermittlungsschritt notwendig.;Vollständig vermaschtes Netz mit n Stationen: Clusterkoeffizient: Jeder ist mit jedem vernetzt. Der Clusterkoeffizient hat den Wert 1. Durchmesser: Jeder ist mit jedem vernetzt. Der Durchmesser ist 1.;Balancierter k-närer Baum mit n Elementen: Clusterkoeffizient: Kein Nachbar eines Knotens ist direkt mit einem anderen Nachbarn desselben Knotens vernetzt. Der Clusterkoeffizient ist 0. Durchmesser: Per Definition ist die Höhe des k-nären balancierten Baumes maximal c·log_k(n), wobei c eine Konstante ist. Zwei Blätter, die nur über den Wurzelknoten erreicht werden können, haben demnach den Abstand 2·c·log_k(n).;"
+  },
+  {
+    "id": "ea2-strukturen",
+    "task_type": "BEISPIELE",
+    "aufgabenstellung": "Im Kurs haben Sie einige Beispiel für Strukturen in Natur und Technik kennengelernt. Nennen Sie fünf weitere Beispiel für Strukturen aus diesen Bereichen:",
+    "musterloesung": "Beispiele hierfür sind neben vielen anderen: Das Stromnetz, Drahtgebundenes Telekommunikationsnetz, Ausbreitung ansteckender Krankheiten, Sanddünen in der Wüste, Vogel- und Fischschwärme, Hierarchien in Organisationen oder anderen sozialen Gemeinschaften auch bei Tieren. Dies ist natürlich nur eine kleine Auswahl. In der Korrektur wurden auch weitere Beispiele von Strukturen als richtig gewertet."
+  },
+  {
+    "id": "ea2-edge-reassignment-und-small-worlds-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden. Bestimmen Sie den Cluster-Koeffizienten für den Ring.",
+    "musterloesung":" Man beachte: Der Knoten, für den der Clusterkoeffizient berechnet werden soll, taucht in der Berechnung selbst gar nicht auf, sondern nur dessen Nachbarn. Jeder Knoten hat 4 direkte Nachbarn. Es gibt somit 6 möglicher Verbindungen (bidirektional).  Der lokale Clusterkoeffizient jedes Knotens ist daher 3/6 = 0,5. Da er für alle Knoten gleich ist, entspricht der Wert gleichzeitig dem globalen Clusterkoeffizienten."
+  },
+  {
+    "id": "ea2-edge-reassignment-und-small-worlds-2",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden.Ermitteln Sie für den Knoten k1 die mittlere Pfadlänge, indem Sie den Durchschnitt der Pfadlängen zu allen anderen Knoten bestimmen.",
+    "musterloesung":"Als Pfadlänge zwischen zwei Knoten wird die minimale Anzahl der Sprünge bezeichnet, die benötigt werden, um von dem einem der beiden Knoten zu dem jeweils anderen zu gelangen. So hat beispielsweise die Pfadlänge zwischen k1 und k8 den Wert 4, der Pfad führt über die Knoten k3, k5 und k7 oder alternativ über die Knoten k3, k5 und k6 .  In Mittel über alle 14 Zielknoten ergibt sich daraus die Pfadlänge Lk1= (1+1+2+2+3+3+4+4+3+3+2+2+1+1)/14 = 16/7"
+  },
+  {
+    "id": "ea2-edge-reassignment-und-small-worlds-3",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "Gegeben sein ein Ring mit N=15 Knoten k1, k2, k3, ..., k15 und d=4. d.h. jeder Knoten ist nicht nur mit seinen direkten Nachbaren, sondern auch mit seinen jeweils übernächsten Nachbarn in beide Richtungen verbunden. Ersetzen Sie nun nach dem Modell von Watts & Strogatz eine Verbindung von k1 so, dass k1 mit k8 verbunden ist. Bestimmen Sie nun erneut die durchschnittliche Pfadlänge von k1 zu den anderen Knoten und vergleichen Sie mit a) (Clusterkoeffizient 3/6 = 0,5.)",
+    "musterloesung":"Durch die direkte Verbindung zu k8 verringern sich die Pfadlängen und es ergibt sich: Lk1= (1+1+2+2+3+2+2+1+2+2+3+2+2+1)/14=13/7 Das Edge Reassignment an Knoten 1 verkürzt also die durchschnittliche Pfadlänge von k1 zu den anderen Knoten um 3/16 = 18,75%."
+  },
+  {
+    "id": "ea2-hubs-and-authorities-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Gegeben sei der folgende Graph: 1->2, 2->1, 2->3, 3->1. Bestimmen Sie die Adjazenzmatrix.",
+    "musterloesung":"A=[[0,1,0],[1,0,1],[1,0,0]]"
+  },
+  {
+    "id": "ea2-hubs-and-authorities-2",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "Gegeben sei der folgende Graph: 1->2, 2->1, 2->3, 3->1. Bestimmen Sie die Hub- und Authority-Vektoren h und a für die Knoten des Graphen, indem Sie das nachfolgende Eigenvektor-Problem lösen: $$ A \\cdot A^T \\cdot h = m \\cdot h $$ $$ A^T \\cdot A \\cdot a = m \\cdot a $$ Hinweis: Für den Algorithmus ist nur der Eigenvektor zum betragsmäßig größten Eigenwert m zu betrachten. Auszugeben sind Eigenwert m und Rechenweg dazu, Hubvektor h und Rechenweg dazu, Authorityvektor a und Rechenweg dazu",
+    "musterloesung":"In dem gegebenen Graphen existieren die gerichteten Kanten 1 → 2, 2 → 1, 2 → 3 und 3 → 1. Daraus ergibt sich die nachfolgende Adjazenzmatrix A und ihre Transponierte A^T, die wir gleich benötigen werden: A = (0 1 0; 1 0 1; 1 0 0), A^T = (0 1 1; 1 0 0; 0 1 0). Der Hubvektor dieses Graphen entspricht dem zum betragsmäßig größten Eigenwert gehörenden Eigenvektor des Matrixproduktes A·A^T aus der Adjazenzmatrix und ihrer Transponierten. Der Authorityvektor ergibt sich entsprechend aus dem Matrixprodukt A^T·A. Das zu lösende Eigenvektorproblem lässt sich also beschreiben durch A·A^T·h = m·h und A^T·A·a = m·a mit A·A^T = (1 0 0; 0 2 1; 0 1 1) und A^T·A = (2 0 1; 0 1 0; 1 0 1). Das charakteristische Polynom P(m) zur Berechnung des Hubvektors h ergibt sich durch Aufstellen der Eigenwertgleichung für A·A^T: P(m) = det(A·A^T - mE) = |1-m 0 0; 0 2-m 1; 0 1 1-m| = -m^3 + 4m^2 - 4m + 1. Die Eigenwerte ergeben sich durch Lösen der Gleichung P(m) = 0. Es ergeben sich drei reelle Eigenwerte: m1 ≈ 0.38, m2 = 1, m3 ≈ 2.62. Der betragsmäßig größte Eigenwert ist m3, sodass der Hubvektor nun durch die Gleichung (A·A^T - m3E)·h = 0 bestimmt wird. Die Lösung dieser Gleichung lautet h = (0; 1.62; 1). Der Knoten 1 hat also einen Hubwert von 0, Knoten 2 hat mit 1.62 den größten Hubwert und Knoten 3 liegt mit einem Wert von 1 in der Mitte. Für den Authorityvektor a wird analog das Eigenwertproblem des Matrixproduktes A^T·A gelöst. Da die Eigenwerte aus Symmetriegründen identisch mit den gerade bestimmten Werten m1 ≈ 0.38, m2 = 1, m3 ≈ 2.62 sind, kann auch direkt auf diese zurückgegriffen werden. Der Authorityvektor hat den Wert a = (1.62; 0; 1)."
+  },
+  {
+    "id": "ea3-Signalklassifikation",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": "Tragen Sie die fehlenden Begriffe im nachfolgenden Signalklassifikationsbaum ein:",
+    "musterloesung": "von links oben nach rechts unten: stochastisch, deterministisch, nichtstationär, stationär, quasiperiodisch, nichtperiodisch, periodisch"
+  },
+  {
+    "id": "ea3-Fourierreihe-1",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ Lösung: a0/2 und Rechenweg/Begründung", 
+    "musterloesung": "a0/2 = 0,5; Rechenweg/Begründung: $$\\frac{a_0}{2}$$ lautet: $$\\frac{a_0}{2} =  \\frac{1}{T_0} \\int_{t_0}^{t_0+T_0} x(t) \\, dt$$ Dies entspricht dem arithmetischen Mittel über eine Periode, also im Beispiel genau 0,5."
+  },
+  {
+    "id": "ea3-Fourierreihe-2",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ ak und Rechenweg/Begründung", 
+    "musterloesung":"$$a_k = \\frac{2 - 2\\cos(\\pi k)}{\\pi^2 k^2} = \\begin{cases} \\dfrac{2}{\\pi^2 k^2}, & k \\\\ \\text{ungerade} \\\\[6pt] 0, & \\text{sonst} \\end{cases}$$; Rechenweg / Begründung: Die Ausgangsformel lautet $$ a_k = \\frac{2}{T_0} \\int_{t_0}^{t_0+T_0} x(t)\\cos(k\\omega_0 t)\\, dt \\quad$$ mit $$\\quad \\omega_0 = \\frac{2\\pi}{T_0} $$ Im konkreten Fall $(T_0 = 2)$ gilt daher $$ a_k = \\int_{-1}^{1} x(t)\\cos(k \\pi t)\\, dt $$ Aus Symmetriegründen genügt es, nur über eine Dreiecksseite zu integrieren und das Ergebnis zu verdoppeln: $$ a_k = 2 \\int_{0}^{1} (1-t)\\cos(k\\pi t)\\, dt $$ Durch Lösung dieses Integrals über partielle Integration kommt man auf das obenstehende Ergebnis."
+  },
+  {
+    "id": "ea3-Fourierreihe-3",
+    "task_type": "RECHENAUFGABE", 
+    "aufgabenstellung": "Bestimmen Sie die Fourierreihe der Dreieckfunktion in reeller Darstellung: $$ \\wedge(t)= \\left\\{ \\begin{array}{cc} 1-|t| & |t|<1 \\\\ 0 & sonst \\\\ \\end{array} \\right. $$ bk und Rechenweg/Begründung", 
+    "musterloesung":"bk = 0; Rechenweg/Begründung:  Die Dreiecksfunktion ist gerade und kann daher keine ungeraden Schwingungsanteile enthalten."
+  },
+  {
+    "id": "ea3-Abtastung-1-1",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Gegeben sei eine periodische Schwingung der Frequenz f0 = 10 Hz. Die Schwingung wird beschrieben durch $$ f(x)=A \\cdot \\sin (2 \\pi f_0 t) $$ Diese Schwingung soll nun abgetastet werden.Wie groß muss die Abtastfrequenz fa mindestens sein, damit das Signal fehlerfrei aus den Abtastwerten wiederhergestellt werden kann?",
+    "musterloesung": "fa > 20 Hz"
+  },
+  {
+    "id": "ea3-Abtastung-1-2",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Gegeben sei eine periodische Schwingung der Frequenz f0 = 10 Hz. Die Schwingung wird beschrieben durch $$ f(x)=A \\cdot \\sin (2 \\pi f_0 t) $$ Diese Schwingung soll nun abgetastet werden.Wie groß muss die Abtastfrequenz fa mindestens sein, damit das Signal fehlerfrei aus den Abtastwerten wiederhergestellt werden kann? Begründung",
+    "musterloesung": "Begründung: Das Abtasttheorem besagt, dass ein Signal mit mehr als der doppelten im Signal maximal auftretenden Frequenz abgetastet werden muss, um dieses fehlerfrei rekonstruieren zu können. Die maximale (und einzige) Frequenz, die im Signal auftritt, ist 10 Hz, also muss die Abtastfrequenz über 20 Hz liegen."
+  },
+  {
+    "id": "ea4-huffmann-codierung-1",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "Gegeben sei ein Alphabet A bestehend aus den Symbolen A={S1, S2, S3, S4, S5, S6, S7, S8} mit folgenden Symbolauftrittswahrscheinlichkeiten: S1=0,14, S2=0,18, S3=0,08, S4=0,12, S5=0,32, S6=0,01, S7=0,06, S8=0,09. Wie viele Stellen werden zur Codierung dieses Alphabets mindestens benötigt, wenn ein Code ohne jegliche Komprimierung verwendet wird?",
+    "musterloesung":"Lösung: 3 (Wert) Bit (Einheit), Begründung: Es sind 8 Symbole zu kodieren. Dazu werden 3 Binärstellen benötigt (ld 8 = 3)."
+  },
+  {
+    "id": "ea4-huffmann-codierung-3-a",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": "S1=100, S2=00, S3=1011, S4=011, S5=11, S6=10100, S7=10101, S8=010.Berechnen Sie die durchschnittliche Codewortlänge für den Code.",
+    "musterloesung":" Lösung: 2,72 (Wert) Bit (Einheit). Rechenweg:Für jedes Symbol wird Auftrittswahrscheinlichkeit mit Codewortlänge multipliziert. Dieser Wert wird über alle Symbole summiert.0,14 · 3 Bit + 0,18 · 2 Bit + 0,08 · 4 Bit + 0,12 · 3 Bit + 0,32 · 2 Bit + 0,01 · 5 Bit + 0,06 · 5 Bit + 0,09 · 3 Bit = 2,72"
+  },
+  {
+    "id": "ea4-crc-a",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Geben Sie zunächst das Informationspolynom I(x) in TeX-Notation (ohne Dollarzeichen) an.",
+    "musterloesung": "I(x) = 0·x^15 + 0·x^14 + 1·x^13 + 1·x^12 + 0·x^11 + 0·x^10 + 0·x^9 + 1·x^8 + 1·x^7 + 0·x^6 + 0·x^5 + 0·x^4 + 1·x^3 + 1·x^2 + 0·x^1 + 0·x^0 = x^13 + x^12 + x^8 + x^7 + x^3 + x^2"
+  },
+  {
+    "id": "ea4-crc-d",
+    "task_type": "FORMEL_ZAHL",
+    "aufgabenstellung": "Sie sollen nun die Nachricht 0011 0001 1000 1100 mit Hilfe des CRC-Verfahrens für die Übertragung absichern. Als Generatorpolynom wird G(x)=x^5+x^2+1 (CRC-5) verwendet. Wie lautet der resultierende CRC Prüfwert (binär)?",
+    "musterloesung": "001100011000110011011"
+  },
+  {
+    "id": "ea4-huffmann-codierung-3-b",
+    "task_type": "RECHENAUFGABE",
+    "aufgabenstellung": " Um welchen Anteil (prozentual) verringert sich die mittlere Codewortlänge im Vergleich zu der in Aufgabenteil 1 gefundenen Antwort?(2,72 Bit)",
+    "musterloesung":" Lösung: 9,3 Prozent, Rechenweg: 3 Bit - 2,72 Bit = 0,28 Bit Verbesserung 0,28 Bit /3 Bit = 0,0933333333333 "
+  },
+    {
+    "id": "ea5-OSI-Schichtenmodell",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": " Ordnen Sie folgende Aufgaben, Verfahren bzw. Protokolle der richtigen Schicht des OSI-ReferenzModells zu, indem Sie die entsprechende Schichtnummer in die rechte Spalte eintragen:Wegevermittlung, Frame-Bildung, Cookie-Management, Bit-Übertragung, Paketierung, Segmentierung, Ende-zu-Ende-Vermittlung, Dienst-zu-Dienst-Vermittlung, Leitungskodierung, Medienzugriffskontrolle, Network Address Translation, Flusskontrolle, Aufbau & Verwaltung virtueller Verbindungen, Verwaltung von verbindungsunabhängigen Sitzungen, Einheitliche Darstellung von Daten in heterogenen Systemen, CSMA/CD, IP, UDP, TCP, DNS, HTTP, ICMP, Sockets",
+    "musterloesung":"Wegevermittlung: Schicht 3 (Vermittlung), Frame-Bildung: Schicht 2 (Sicherung), Cookie-Management: Schicht 5 (Sitzung), Bit-Übertragung: Schicht 1 (Bitübertragung), Paketierung: Schicht 3 (Vermittlung), Segmentierung: Schicht 2 (Sicherung) oder Schicht 4 (Transport, spez. TCP), Ende-zu-Ende-Vermittlung: Schicht 3 (Vermittlung), Dienst-zu-Dienst-Vermittlung: Schicht 4 (Transport), Leitungskodierung: Schicht 1, ggf. noch Schicht 2, Medienzugriffskontrolle: Schicht 2, Network Address Translation: Schicht 3 (Vermittlung), Flusskontrolle: Schicht 2 (Switches) oder Schicht 4 (TCP), Aufbau & Verwaltung virtueller Verbindungen: Schicht 4 (Transport), ggf. Schicht 5 (Sitzung), Verwaltung von verbindungsunabhängigen Sitzungen: Schicht 5 (Sitzung), Einheitliche Darstellung von Daten in heterogenen Systemen: Schicht 6 (Darstellung), CSMA/CD: Schicht 2 (Medienzugriff), IP: Schicht 3 (Vermittlung), UDP: Schicht 4 (Transport), TCP: Schicht 4 (Transport), DNS: Schicht 7 (Anwendung), HTTP: Schicht 7 (Anwendung), ICMP: Schicht 3 (Vermittlung), Sockets: Schicht 4"
+  },
+  {
+    "id": "ea5-Dijkstra-Algorithmus",
+    "task_type": "ZUORDNUNG",
+    "aufgabenstellung": " Ermitteln Sie mit Hilfe des Dijkstra-Algorithmus die kürzesten Pfade von Knoten A zu den anderen Knoten. Graph:A-B:1, A-D:2, B-C:3, B-E:1, C-D:2, C-F:3, D-G:3, E-F:1, E-H:2, F-G:1, F-I:4, G-J:1, H-I:1, I-J:1 Tragen Sie die Kosten in die Tabelle ein:",
+    "musterloesung":"B: 1, A; C: 4, B; D: 2, A; E: 2, B; F: 3, E; G: 4, F; H: 4, E; I: 5, H; J: 5, G"
+  },
+  {
+    "id": "ea6-1-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen denken Sie, dass drahtlose Kopfhörer über Bluetooth und nicht über WLAN mit Ihrem Smartphone gekoppelt sind?",
+    "musterloesung": "Bluetooth wurde für einen geringen Energieverbrauch konzipiert. Sowohl Smartphone, als auch Kopfhörer selbst können somit den Energieverbrauch reduzieren. Mit WLAN wäre der Energieverbrauch höher. "
+  },
+  {
+    "id": "ea6-2-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Das C-Netz nutzte ein digitales Übertragungsverfahren zur Signalisierung von gewählten Telefonnummern oder von anrufen. Weswegen vermuten Sie, dass gerade die Signalisierung digital übertragen wurde? ",
+    "musterloesung":" Die Übertragung von Signalisierung (also Steuerdaten) sollte besonders robust funktionieren. Ansonsten wird eine gewählte Nummer falsch interpretiert oder das Mobiltelefon empfängt keine Steuerdaten vom Mobilfunknetzwerk. Eine digitale Übertragung ermöglicht eine geringere Fehleranfälligkeit. Weiterhin ist die Übertragung von Sprache über ein analoges Verfahren einfacher zu realisieren. In der damaligen Zeit war die notwendige Technik noch nicht so fortgeschritten."
+  },
+  {
+    "id": "ea6-2-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was ist der Unterschied von leitungsvermittelnden Verfahren gegenüber paketvermittelnden Verfahren? ",
+    "musterloesung":"Bei der Leitungsvermittlung wird zur Übertragung von Daten eine „virtuelle Leitung“ geschalten. Diese Leitung ist explizit für die beiden Kommunikationspartner reserviert. Selbst wenn beide Kommunikationspartner keine Daten senden, ist die Leitung reserviert und wird abgerechnet. Bei der Paketvermittlung wird jedes Datenpaket einzeln vermittelt (geroutet). Kommunizieren zwei Teilnehmer gerade nicht miteinander, kann die frei gewordene Kapazität für andere Datenübertragungen genutzt werden. Da nur die tatsächlich erzeugten Daten vermittelt werden, fallen im Allgemeinen Gebühren auch nur für das übertragene Volumen an."
+  },
+  {
+    "id": "ea6-2-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen wurde in Deutschland UMTS und nicht GSM deaktiviert, obwohl UMTS eine viel höhere Datenübertragungsrate als GSM ermöglicht? ",
+    "musterloesung":"Eine große Anzahl an Geräten ist ausschließlich mit GSM kompatibel. Diese Geräte stellen beispielsweise automatische Notruffunktionalität in Autos bereit, erlauben die Abgabe eines Notrufs auf Knopfdruck oder alarmieren in Gebäuden automatisiert Feuerwehr oder Polizei. Diese Geräte lassen sich nicht auf UMTS umrüsten und müssten ersetzt werden. "
+  },
+  {
+    "id": "ea6-3-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen können kleine Zellen in einem zellulären Mobilfunknetzwerk von Vorteil sein?",
+    "musterloesung":"Benutzer innerhalb einer Zelle teilen sich die zur Verfügung stehende Bandbreite mit der zugehörigen Basisstation. Je kleiner die Zelle ist, desto weniger Nutzer müssen sich diese Bandbreite teilen. "
+  },
+  {
+    "id": "ea6-3-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "LTE unterstützte in den ersten Versionen keine Telefonie. Stattdessen wurde der Circuit Switched Fallback (CSFB) eingeführt. Hierbei wechselt das Mobiltelefon bei einem an- oder abkommenden Telefonanruf in das UMTS oder GSM-Netz. Was könnten die Nachteile dieses Verfahrens sein? ",
+    "musterloesung":"Lösung: Es könnte sein, dass an dem aktuellen Standort des Mobilfunkteilnehmers zwar LTE zur Verfügung steht, jedoch kein GSM oder UMTS-Empfang möglich ist. Weiterhin könnte das GSM oder UMTS-Netz überlastet sein. Zusätzlich benötigt der Wechsel von einer Technologie zur nächsten viel Zeit: Das Mobiltelefon muss auf eine andere Frequenz wechseln und sich erneut in GSM oder UMTS anmelden."
+  },
+  {
+    "id": "ea6-4-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen ist eine WLAN-Verbindung im Allgemeinen ungeeignet zur Übertragung von Sprache oder einem actionreichem Online-Spiel? ",
+    "musterloesung":"In WLAN gibt es keine koordinierte Steuerung von sendenden Teilnehmern. Stattdessen darf jeder Teilnehmer zu jeder Zeit ein Sendefreigabe anfordern. In einem stark ausgelastetem WLANNetz kann also nicht garantiert werden, zu welchem Zeitpunkt eine gegebene Station senden darf."
+  },
+  {
+    "id": "ea6-4-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Ist durch das Zugriffsverfahren Collision Avoidance (CA) garantiert, dass es zu keinen Kollisionen beim Senden von Daten kommt? ",
+    "musterloesung":"Mit CA ist die Wahrscheinlichkeit einer Kollision reduziert. Garantiert werden kann dies jedoch nicht. Zwei Teilnehmer könnten immer noch zur selben Zeit einen Request to Send (RTS) übertragen."
+  },
+  {
+    "id": "ea6-4-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Erläutern Sie das Hidden Station Problem in eigenen Worten und gehen Sie darauf ein, wie dieses Problem in WLAN gelöst wurde ",
+    "musterloesung":"Das Hidden Station Problem: Zwei Teilnehmer (A, B) in einem Netzwerk könnten jeweils mit dem Access Point verbunden sein aber so weit voneinander entfernt sein, dass sie sich gegenseitig nicht empfangen können. Das bedeutet, dass Teilnehmer A nicht in Erfahrung bringen kann, ob Teilnehmer B gerade Daten überträgt. Somit weiß Teilnehmer A nicht, ob er selbst gerade Daten senden darf oder nicht. In WLAN wird dieses Problem dadurch gelöst, dass Teilnehmer vor dem Senden von Daten zuerst eine Sendeanforderung übertragen (RTS). Der Access Point beantwortet diese (CTS). Diese Antwort ist von allen Stationen, die mit dem gleichen Access Point verbunden sind empfangbar. Daher werden andere Informationen darüber informiert, dass gerade eine Datenübertragung durch einen anderen Teilnehmer stattfindet."
+  },
+  {
+    "id": "ea6-5-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Nennen Sie zwei Vorteile des Adaptive Frequency-Hopping Spread Spectrum Verfahren. ",
+    "musterloesung":"Mit diesem Verfahren werden zu sendenden Signalen auf verschiedene Frequenzen verteilt. Hierdurch wird die Störung von anderen Funkverfahren reduziert, da nicht permanent auf einer Frequenz übertragen wird. Gleichzeitig kann sich das Verfahren selbst auf Störungen einstellen. Sind einzelne Frequenzen durch einen anderen Sender belegt, umgeht das Frequency-Hopping-Verfahren diese einzelnen Kanäle."
+  },
+  {
+    "id": "ea6-5-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen wird NFC für die kontaktlose Bezahlung genutzt und nicht Bluetooth? ",
+    "musterloesung":"Auch wenn Bluetooth nur wenig Energie benötigt, würde eine EC-Karte dennoch einen Akku zum Senden benötigen. Dies ist nicht praktikabel. Bei NFC kann der Transponder seine Energie vollständig aus dem Signal des Lesegerätes beziehen. Weiterhin hat Bluetooth eine höhere Reichweite. Dies würde verschiedene Angriffsszenarien ermöglichen, da Hacker das Signal aus größerer Entfernung aufzeichnen, manipulieren oder wieder Abspielen könnten."
+  },
+  {
+    "id": "ea6-5-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen befinden sich Satelliten zur Internetanbindung in einem niedrigen Orbit? ",
+    "musterloesung":"Der niedrige Orbit verringert die Signallaufzeit. Die Latenz wird hierdurch geringer."
+  },
+   {
+    "id": "ea7-1-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Nennen Sie Anforderungen im Bereich Smart City",
+    "musterloesung":"Verteilte Sensoren, teils innerhalb Gebäude, Straßen oder Laternen verbaut. Lebensdauer mehrere Jahre (teilweise ohne externe Stromversorgung). Jeder Sensor sendet periodisch kleine Datenmengen. "
+  },
+  {
+    "id": "ea7-1-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen könnte es nachteilig sein, verteilte Sensoren (z.B. im Bereich Smart City) über Mobilfunk zu verbinden? ",
+    "musterloesung":"Mobilfunkeinheiten benötigen im Vergleich zu anderen Technologien viel Energie. Jeder Sensor muss über eine eigene SIM-Karte verfügen. Austausch des Mobilfunkanbieters benötigt einen Wechsel der SIM-Karte in jedem Sensorknoten. Dies ist evtl. nicht möglich. "
+  },
+  {
+    "id": "ea7-2-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Nennen Sie den Grund, weswegen in einem WLAN-Netzwerk die Latenz schwanken kann. ",
+    "musterloesung":"In einem WLAN senden die Teilnehmer sobald Daten verfügbar sind. Senden viele andere Stationen, kann es lange dauern, bis der Funkkanal frei wird. Abhängig von der Auslastung verändert sich somit die Latenz. "
+  },
+  {
+    "id": "ea7-2-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Hat die schwankende Latenz in WLAN eine praktische Auswirkung? ",
+    "musterloesung":"Nicht für alltägliche Dinge wie Websurfen, Streaming von Videos oder E-Mail. Zeitkritische Anwendungen sind mit einem WLAN allerdings nicht umsetzbar. Ein Roboter, der beispielsweise regelmäßige Steuersignale erwartet kann durch die zeitlich nicht gleichmäßig eintreffenden Daten nicht fehlerfrei gesteuert werden. Beispiel: Ein Roboter erwartet Steuerdaten mit 100Hz. WLAN verzögert einige Pakete um wenige ms. Hierdurch sinkt die Frequenz der eintreffenden Steuerdaten zu stark und der Roboter schaltet ab. "
+  },
+  {
+    "id": "ea7-3-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Ein häufig genannter Anwendungsfall von 5G Netzwerken ist das autonome Fahren. Was sind in diesem Bereich einige der Herausforderungen? ",
+    "musterloesung":"Die Informationen der Sensoren eines Autos oder mehrere Autos sollen mit geringer Latenz aggregiert und wieder an andere Fahrzeuge gesandt werden.  "
+  },
+  {
+    "id": "ea7-3-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Würde für das autonome Fahren nicht auch ein 4G Netz ausreichen? ",
+    "musterloesung":" Für nicht zeitkritische Anwendungen ja. Soll ein Fahrzeug oder eine Fahrzeugflotte von einem externen System gesteuert werden, muss diese Steuerinstanz so nahe wie möglich an den Basisstationen liegen. Nur hierdurch ist eine geringe Latenz umsetzbar. In einem 4G Netz ist dies nicht vorgesehen. In 5G Netzwerken ist angedacht, dass kleine „Cloud-Systeme“ mit jeder Basisstation verbunden sein können. Diese Mobile Edge Cloud Systeme können eine geringe Latenz zu den verbundenen Teilnehmern erst möglich machen. "
+  },
+    {
+    "id": "ea7-3-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie kann die nächstgelegene MEC ausfindig gemacht werden?",
+    "musterloesung":"Lösung: Es gibt mehrere denkbare Optionen. Eine Option ist es, für die verteilte Anwendung in der MEC eine feste IP-Adresse zu hinterlegen. Diese IP-Adresse wird nicht in das Internet geroutet, sondern nur innerhalb des Netzes des Mobilfunkanbieters. Jede UPF routet die gleiche IP-Adresse an die nächste MEC. Eine weitere Möglichkeit ist das Auffinden über DNS. Hierbei stellt jede UPF einen DNS-Server bereit. Dieser leitet „normale“ DNS-Anfragen wie gewöhnlich weiter. DNS-Anfragen, welche jedoch auf einen Dienst innerhalb der MEC zeigen, werden direkt mit der IP-Adresse der nächsten MEC aufgelöst. Die dritte vorgeschlagene Lösung: Die Anwendung selbst besitzt eine Datenbank. Ruft ein Endgerät einen Dienst auf, welcher auf mehreren MEC verteilt ist, leitet die Anwendung das Endgerät über HTTP-Redirect (oder einen anderen, eigenen Ansatz) zur IP-Adresse oder zum Domainnamen der nächsten MEC."
+  },
+  {
+    "id": "ea7-4-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Weswegen belastet eine Container-Anwendung den Host weniger als eine Anwendung in einer VM? ",
+    "musterloesung":"Eine VM bedeutet, dass ein gesamter PC virtualisiert wird. Darin wird ein Betriebssystem gestartet. Erst darauf kann die eigentliche Anwendung gestartet werden. Das Betriebssystem beansprucht Arbeitsspeicher, Festplattenplatz und CPU-Zyklen, welche nicht der Anwendung zugutekommen. In einem Container wird lediglich die Software gestartet, welche zur Anwendung gehört. Es muss kein zusätzliches Betriebssystem gestartet werden. Zusätzlich muss für eine VM vorab die Anzahl der CPUs, des Arbeitsspeichers und des Festplattenspeichers bekannt sein. Ein Container hingegen kann (dynamisch) die Ressourcen des darunterliegenden Betriebssystems nutzen. "
+  },
+  {
+    "id": "ea7-4-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie lässt sich eine Anwendung als Container starten? ",
+    "musterloesung":"Es muss zuerst ein Container-Image erstellt werden. In Docker ist dies über eine Textdatei möglich. Hierin ist beschrieben, welche Dateien in das Image kopiert werden, welche Befehle ausgeführt werden sollen, um das fertige Image zu bauen, und welche Funktionen von anderen Images eingebunden werden sollen. Die Dateien, welche die Anwendung sind müssen in das Image kopiert werden. Die auszuführende Datei muss angegeben werden. Ist das Image erstellt muss es innerhalb eines Containers gestartet werden. Hierbei wird die zu ausführende Datei gestartet. "
+  },
+  {
+    "id": "ea7-4-c",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Container-Orchestrierung? ",
+    "musterloesung":"Dies bedeutet, dass Container und Images nicht manuell erstellt und gestartet werden. Stattdessen wird dies von der Orchestrierungslösung übernommen. Hierbei kann die Orchestrierungslösung eine beliebige Anzahl von Containern automatisiert auf einen oder mehrere Hosts übertragen und starten. "
+  },
+  {
+    "id": "ea7-5-a",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Was bedeutet Software Defined Networking? ",
+    "musterloesung":"Der Begriff bedeutet, dass Netzwerkkomponenten (Router, Switche, Firewall, …) über einen zentralen Controller gesteuert werden. Durch diesen Controller lässt sich das Netzwerk programmieren. Hierdurch sind Automatisierungslösungen denkbar, sodass ein Netzwerk bei neuen Anwendungen (z.B. durch eine Orchestrierungslösung) ebenfalls neu konfiguriert wird. "
+  },
+  {
+    "id": "ea7-5-b",
+    "task_type": "FREITEXT",
+    "aufgabenstellung": "Wie ermöglicht TOR eine anonyme Kommunikation im Internet? ",
+    "musterloesung":"TOR baut verschlüsselte Tunnel zu Routern auf. Die Router entschlüsseln die Daten wieder und leiten sie von Ihrer IP-Adresse weiter in das Internet. Ein TOR-Client baut eine Route bestehend aus drei TOR-Routern auf. Zu jedem Router wird eine eigene verschlüsselte Verbindung hergestellt. Wird ein IP-Paket vom Clienten übertragen, „lernen“ die einzelnen Router nur die Information, dass vom direkten Nachbarn etwas gesendet wurde und an welchen Punkt das Paket weitergeroutet wird. Wegen der mehrfachen Verschlüsselung kann nur der letzte TOR-Router die eigentlich übertragenen Daten sehen. Der letzte Router weiß jedoch nicht, von wem die Daten stammen. Innerhalb des TOR-Netzwerkes werde eigene Adressen vergeben."
+  }
+
 ]

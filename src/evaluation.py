@@ -81,7 +81,7 @@ class Evaluation:
         """
         matrix, unbekannte_eingaben, unbekannte_ausgaben = self.erstelle_matrix(ordner)
 
-        # Falls nur eine bestimmte Eingabezeile gewünscht ist
+        # Falls nur eine bestimmte Eingabezeile erfolgen soll
         eingaben = [kategorie_eingabe] if kategorie_eingabe else ["korrekt", "teilweise inkorrekt", "inkorrekt"]
 
         zeilen = []
@@ -100,7 +100,7 @@ class Evaluation:
             columns=["Strategie", "Eingabe", "Ausgabe korrekt", "Ausgabe teilweise inkorrekt", "Ausgabe inkorrekt"]
         )
 
-        # Optional: zur Kontrolle unbekannte Dateien melden
+        # zur Kontrolle unbekannte Dateien melden
         if unbekannte_eingaben:
             print("Unbekannte Eingaben (Dateiname enthält keine Kategorie):")
             for f in unbekannte_eingaben:
